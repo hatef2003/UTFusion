@@ -22,4 +22,5 @@ HEADERS += \
     buffer.h \
     datacontainer.h \
     fusion.h \
+    globals.h \
     sensorwrapper.h
