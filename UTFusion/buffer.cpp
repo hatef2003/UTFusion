@@ -8,27 +8,30 @@ buffer::buffer(int size, QObject *parent)
     : QObject{parent}
 {}
 
-void buffer::addData(RadarData r, CameraData c)
+void buffer::addRadar(RadarData r)
 {
-    int index = tail % size;
-    m_camArray[index] = c;
+    int index = tailRadar % size;
+    tailRadar++;
     m_radarArray[index] = r;
-    tail++;
-    if (tail - head > size)
-        head++;
+    headRadar += (tailRadar - headRadar > size);
+}
+
+void buffer::addCam(CameraData c)
+{
+    int index = tailCam % size;
+    m_camArray[index] = c;
+    tailCam++;
+    headCam += (tailCam - headCam > size);
 }
 
 std::pair<buffer::RadarData, buffer::CameraData> buffer::read()
 {
-    if (head == tail) {
+    if (headRadar == tailRadar || headCam == tailCam)
         throw std::runtime_error("Buffer is empty");
-    }
 
-    int index = tail % size;
-    RadarData radar = m_radarArray[index];
-    CameraData camera = m_camArray[index];
-
-    tail--; // move to next element
-
-    return {radar, camera};
+    int indexCam = tailCam % size;
+    int indexRadar = tailRadar % size;
+    auto cam = m_camArray[indexCam];
+    auto rad = m_radarArray[indexRadar];
+    return {rad, cam};
 }

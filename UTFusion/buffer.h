@@ -27,7 +27,8 @@ public:
     };
     explicit buffer(QObject *parent = nullptr);
     explicit buffer(int size, QObject *parent = nullptr);
-    inline void addData(RadarData r, CameraData c);
+    inline void addRadar(RadarData r) {}
+    inline void addCam(CameraData c);
     inline std::pair<RadarData, CameraData> read();
 
 signals:
@@ -35,8 +36,10 @@ signals:
 
 private:
     int size;
-    int head;
-    int tail;
+    int headRadar;
+    int tailRadar;
+    int headCam;
+    int tailCam;
 
     std::array<RadarData, MAX_DATA> m_radarArray;
     std::array<CameraData, MAX_DATA> m_camArray;
