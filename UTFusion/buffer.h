@@ -27,7 +27,9 @@ private:
     };
     struct CameraData
     {
-        qint64 timestam;
+        QImage *image1;
+        QImage *image2;
+        qint64 timestamp;
     };
 
     int size;
