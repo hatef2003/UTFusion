@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QtGlobal>
 #include <array>
+#include <globals.h>
 #define MAX_DATA 20
 class buffer : public QObject
 {
@@ -27,9 +28,10 @@ public:
     };
     explicit buffer(QObject *parent = nullptr);
     explicit buffer(int size, QObject *parent = nullptr);
-    inline void addRadar(RadarData r) {}
+    inline void addRadar(RadarData r);
     inline void addCam(CameraData c);
     inline std::pair<RadarData, CameraData> read();
+    inline bool isSync();
 
 signals:
     // Define signals if needed

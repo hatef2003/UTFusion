@@ -24,6 +24,13 @@ void buffer::addCam(CameraData c)
     headCam += (tailCam - headCam > size);
 }
 
+bool buffer::isSync()
+{
+    int val = m_camArray[tailCam % size].timestamp - m_radarArray[tailRadar % size].timestap;
+
+    return (-TIMESTAMP_MAX_DRIFT < val && val < TIMESTAMP_MAX_DRIFT);
+}
+
 std::pair<buffer::RadarData, buffer::CameraData> buffer::read()
 {
     if (headRadar == tailRadar || headCam == tailCam)
