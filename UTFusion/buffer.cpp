@@ -17,3 +17,18 @@ void buffer::addData(RadarData r, CameraData c)
     if (tail - head > size)
         head++;
 }
+
+std::pair<buffer::RadarData, buffer::CameraData> buffer::read()
+{
+    if (head == tail) {
+        throw std::runtime_error("Buffer is empty");
+    }
+
+    int index = tail % size;
+    RadarData radar = m_radarArray[index];
+    CameraData camera = m_camArray[index];
+
+    tail--; // move to next element
+
+    return {radar, camera};
+}
