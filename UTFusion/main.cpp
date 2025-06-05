@@ -1,9 +1,14 @@
 #include <QCoreApplication>
+#include <QImage>
 #include <buffer.h>
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-
+    Buffer b(6);
+    b.addRadar({1, 2, 4, 5, 6, 7, 213213});
+    QImage image;
+    b.addCam({&image, &image, 213214});
+    qDebug() << b.isSync();
     // Set up code that uses the Qt event loop here.
     // Call a.quit() or a.exit() to quit the application.
     // A not very useful example would be including
