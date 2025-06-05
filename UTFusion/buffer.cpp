@@ -1,14 +1,14 @@
 #include "buffer.h"
 
-buffer::buffer(QObject *parent)
+Buffer::Buffer(QObject *parent)
     : QObject{parent}
 {}
 
-buffer::buffer(int size, QObject *parent)
+Buffer::Buffer(int size, QObject *parent)
     : QObject{parent}
 {}
 
-void buffer::addRadar(RadarData r)
+void Buffer::addRadar(RadarData r)
 {
     int index = tailRadar % size;
     tailRadar++;
@@ -16,7 +16,7 @@ void buffer::addRadar(RadarData r)
     headRadar += (tailRadar - headRadar > size);
 }
 
-void buffer::addCam(CameraData c)
+void Buffer::addCam(CameraData c)
 {
     int index = tailCam % size;
     m_camArray[index] = c;
@@ -24,14 +24,14 @@ void buffer::addCam(CameraData c)
     headCam += (tailCam - headCam > size);
 }
 
-bool buffer::isSync()
+bool Buffer::isSync()
 {
     int val = m_camArray[tailCam % size].timestamp - m_radarArray[tailRadar % size].timestap;
 
     return (-TIMESTAMP_MAX_DRIFT < val && val < TIMESTAMP_MAX_DRIFT);
 }
 
-std::pair<buffer::RadarData, buffer::CameraData> buffer::read()
+std::pair<Buffer::RadarData, Buffer::CameraData> Buffer::read()
 {
     if (headRadar == tailRadar || headCam == tailCam)
         throw std::runtime_error("Buffer is empty");

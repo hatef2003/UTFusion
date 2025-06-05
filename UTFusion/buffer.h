@@ -6,7 +6,7 @@
 #include <array>
 #include <globals.h>
 #define MAX_DATA 20
-class buffer : public QObject
+class Buffer : public QObject
 {
     Q_OBJECT
 public:
@@ -26,8 +26,8 @@ public:
         QImage *image2;
         qint64 timestamp;
     };
-    explicit buffer(QObject *parent = nullptr);
-    explicit buffer(int size, QObject *parent = nullptr);
+    explicit Buffer(QObject *parent = nullptr);
+    explicit Buffer(int size, QObject *parent = nullptr);
     inline void addRadar(RadarData r);
     inline void addCam(CameraData c);
     inline std::pair<RadarData, CameraData> read();
