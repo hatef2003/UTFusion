@@ -13,7 +13,7 @@ class Buffer
 public:
     struct RadarData
     {
-        qint64 timestap;
+        qint64 timestamp;
         int a;
         int b;
         int c;

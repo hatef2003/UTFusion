@@ -23,7 +23,7 @@ void DataContainer::newCamData(Buffer::CameraData c)
 
 void DataContainer::newRadarData(Buffer::RadarData r)
 {
-    r.timestap = QDateTime::currentMSecsSinceEpoch();
+    r.timestamp = QDateTime::currentMSecsSinceEpoch();
     int writeIndex = m_readIndex ^ 1;
     m_buffers[writeIndex]->addRadar(r);
     if (m_buffers[writeIndex]->isSync()) {

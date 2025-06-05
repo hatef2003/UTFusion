@@ -29,7 +29,7 @@ void Buffer::addCam(CameraData c)
 bool Buffer::isSync()
 {
     int val = m_camArray[(this->buffUtils.tailCam - 1) % SIZE].timestamp
-              - m_radarArray[(this->buffUtils.tailRadar - 1) % SIZE].timestap;
+              - m_radarArray[(this->buffUtils.tailRadar - 1) % SIZE].timestamp;
     // qDebug() << val << (this->buffUtils.tailCam - 1) % SIZE << (this->buffUtils.tailRadar - 1) % SIZE << SIZE;
     return (-TIMESTAMP_MAX_DRIFT < val && val < TIMESTAMP_MAX_DRIFT);
 }
