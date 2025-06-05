@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     b.addRadar({1, 2, 4, 5, 6, 7, 213213});
     QImage image;
     b.addCam({&image, &image, 213214});
-    qDebug() << b.isSync() << (0 ^ 1) << (1 ^ 1);
+    // qDebug() << b.isSync() << (0 ^ 1) << (1 ^ 1);
     // Set up code that uses the Qt event loop here.
     // Call a.quit() or a.exit() to quit the application.
     // A not very useful example would be including

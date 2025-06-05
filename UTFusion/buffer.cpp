@@ -12,7 +12,7 @@ Buffer::Buffer()
 void Buffer::addRadar(RadarData r)
 {
     int index = this->buffUtils.tailRadar % SIZE;
-    qDebug() << index;
+    // bug() << index;
     this->buffUtils.tailRadar++;
     m_radarArray[index] = r;
     this->buffUtils.headRadar += (this->buffUtils.tailRadar - this->buffUtils.headRadar > SIZE);
@@ -30,7 +30,7 @@ bool Buffer::isSync()
 {
     int val = m_camArray[(this->buffUtils.tailCam - 1) % SIZE].timestamp
               - m_radarArray[(this->buffUtils.tailRadar - 1) % SIZE].timestap;
-    qDebug() << val << (this->buffUtils.tailCam - 1) % SIZE << (this->buffUtils.tailRadar - 1) % SIZE << SIZE;
+    // qDebug() << val << (this->buffUtils.tailCam - 1) % SIZE << (this->buffUtils.tailRadar - 1) % SIZE << SIZE;
     return (-TIMESTAMP_MAX_DRIFT < val && val < TIMESTAMP_MAX_DRIFT);
 }
 
