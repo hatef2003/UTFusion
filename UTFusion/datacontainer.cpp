@@ -6,8 +6,8 @@ DataContainer::DataContainer(QObject *parent)
     //TODO ..
     mu = new QMutex();
     m_readIndex&=0;
-    m_buffers[0] = std::make_unique<Buffer>(6);
-    m_buffers[1] = std::make_unique<Buffer>(6);
+    m_buffers[0] = std::make_unique<Buffer>();
+    m_buffers[1] = std::make_unique<Buffer>();
 }
 
 void DataContainer::newCamData(Buffer::CameraData c)

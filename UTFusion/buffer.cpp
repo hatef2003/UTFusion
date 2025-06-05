@@ -1,13 +1,7 @@
 #include "buffer.h"
 #include "qdebug.h"
 
-Buffer::Buffer(QObject *parent)
-    : QObject{parent}
-{
-}
-
-Buffer::Buffer(int size, QObject *parent)
-    : QObject{parent}
+Buffer::Buffer()
 {
     this->buffUtils.headCam = 0x0;
     this->buffUtils.headRadar = 0x0;

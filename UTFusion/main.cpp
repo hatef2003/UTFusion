@@ -4,7 +4,7 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    Buffer b(6);
+    Buffer b;
     b.addRadar({1, 2, 4, 5, 6, 7, 213213});
     QImage image;
     b.addCam({&image, &image, 213214});

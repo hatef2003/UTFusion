@@ -8,9 +8,8 @@
 #define MAX_DATA 20
 #define SIZE 6 // max 16
 
-class Buffer : public QObject
+class Buffer
 {
-    Q_OBJECT
 public:
     struct RadarData
     {
@@ -28,16 +27,11 @@ public:
         QImage *image2;
         qint64 timestamp;
     };
-    explicit Buffer(QObject *parent = nullptr);
-    explicit Buffer(int size, QObject *parent = nullptr);
+    explicit Buffer();
     void addRadar(RadarData r);
     void addCam(CameraData c);
     std::pair<RadarData, CameraData> read();
     bool isSync();
-
-signals:
-    // Define signals if needed
-
 private:
     struct {
         unsigned int headRadar:4;
