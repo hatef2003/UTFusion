@@ -1,4 +1,4 @@
-QT = core gui
+QT = core gui core
 
 CONFIG += c++17 cmdline
 
