@@ -5,6 +5,7 @@
 #include <QMutex>
 #include <QObject>
 #include <buffer.h>
+
 class DataContainer : public QObject
 {
     Q_OBJECT
@@ -16,7 +17,7 @@ public:
 
 private:
     std::array<std::unique_ptr<Buffer>, 2> m_buffers;
-    int m_readIndex;
+    unsigned int m_readIndex : 1; // this is just to flex, if there is more variables you need to define then make a struct and shove this into that
     QMutex *mu;
 signals:
     void dataSync();

@@ -4,52 +4,50 @@
 Buffer::Buffer(QObject *parent)
     : QObject{parent}
 {
-    size = 6;
 }
 
 Buffer::Buffer(int size, QObject *parent)
     : QObject{parent}
 {
-    headCam = 0;
-    headRadar = 0;
-    tailCam = 0;
-    tailRadar = 0;
-    this->size = size;
+    this->buffUtils.headCam = 0x0;
+    this->buffUtils.headRadar = 0x0;
+    this->buffUtils.tailCam = 0x0;
+    this->buffUtils.tailRadar = 0x0;
 }
 
 void Buffer::addRadar(RadarData r)
 {
-    int index = tailRadar % size;
+    int index = this->buffUtils.tailRadar % SIZE;
     qDebug() << index;
-    tailRadar++;
+    this->buffUtils.tailRadar++;
     m_radarArray[index] = r;
-    headRadar += (tailRadar - headRadar > size);
+    this->buffUtils.headRadar += (this->buffUtils.tailRadar - this->buffUtils.headRadar > SIZE);
 }
 
 void Buffer::addCam(CameraData c)
 {
-    int index = tailCam % size;
+    int index = this->buffUtils.tailCam % SIZE;
     m_camArray[index] = c;
-    tailCam++;
-    headCam += (tailCam - headCam > size);
+    this->buffUtils.tailCam++;
+    this->buffUtils.headCam += (this->buffUtils.tailCam - this->buffUtils.headCam > SIZE);
 }
 
 bool Buffer::isSync()
 {
-    int val = m_camArray[(tailCam - 1) % size].timestamp
-              - m_radarArray[(tailRadar - 1) % size].timestap;
-    qDebug() << val << (tailCam - 1) % size << (tailRadar - 1) % size << size;
+    int val = m_camArray[(this->buffUtils.tailCam - 1) % SIZE].timestamp
+              - m_radarArray[(this->buffUtils.tailRadar - 1) % SIZE].timestap;
+    qDebug() << val << (this->buffUtils.tailCam - 1) % SIZE << (this->buffUtils.tailRadar - 1) % SIZE << SIZE;
     return (-TIMESTAMP_MAX_DRIFT < val && val < TIMESTAMP_MAX_DRIFT);
 }
 
 std::pair<Buffer::RadarData, Buffer::CameraData> Buffer::read()
 {
-    if (headRadar == tailRadar || headCam == tailCam)
+    if (this->buffUtils.headRadar == this->buffUtils.tailRadar || this->buffUtils.headCam == this->buffUtils.tailCam)
         throw std::runtime_error("Buffer is empty");
-    tailCam--;
-    tailRadar--;
-    int indexCam = (tailCam) % size;
-    int indexRadar = tailRadar % size;
+    this->buffUtils.tailCam--;
+    this->buffUtils.tailRadar--;
+    int indexCam = (this->buffUtils.tailCam) % SIZE;
+    int indexRadar = this->buffUtils.tailRadar % SIZE;
     auto cam = m_camArray[indexCam];
     auto rad = m_radarArray[indexRadar];
     return {rad, cam};

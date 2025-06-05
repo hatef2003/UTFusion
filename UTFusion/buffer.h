@@ -6,6 +6,8 @@
 #include <array>
 #include <globals.h>
 #define MAX_DATA 20
+#define SIZE 6 // max 16
+
 class Buffer : public QObject
 {
     Q_OBJECT
@@ -37,11 +39,12 @@ signals:
     // Define signals if needed
 
 private:
-    int size;
-    int headRadar;
-    int tailRadar;
-    int headCam;
-    int tailCam;
+    struct {
+        unsigned int headRadar:4;
+        unsigned int tailRadar:4;
+        unsigned int headCam:4;
+        unsigned int tailCam:4;
+    } buffUtils;
 
     std::array<RadarData, MAX_DATA> m_radarArray;
     std::array<CameraData, MAX_DATA> m_camArray;
