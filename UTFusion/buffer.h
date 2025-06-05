@@ -12,13 +12,13 @@ class Buffer : public QObject
 public:
     struct RadarData
     {
+        qint64 timestap;
         int a;
         int b;
         int c;
         int d;
         int e;
         int f;
-        qint64 timestap;
     };
     struct CameraData
     {

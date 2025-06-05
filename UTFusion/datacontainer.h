@@ -12,6 +12,7 @@ public:
     explicit DataContainer(QObject *parent = nullptr);
     void newCamData(Buffer::CameraData);
     void newRadarData(Buffer::RadarData);
+    std::pair<Buffer::RadarData, Buffer::CameraData> getData();
 
 private:
     std::array<Buffer, 2> m_buffers;
