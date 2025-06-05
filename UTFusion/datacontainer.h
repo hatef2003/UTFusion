@@ -15,9 +15,9 @@ public:
     std::pair<Buffer::RadarData, Buffer::CameraData> getData();
 
 private:
-    std::array<Buffer, 2> m_buffers;
+    std::array<std::unique_ptr<Buffer>, 2> m_buffers;
     int m_readIndex;
-    QMutex mu;
+    QMutex *mu;
 signals:
     void dataSync();
 };

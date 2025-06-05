@@ -3,7 +3,9 @@
 
 Buffer::Buffer(QObject *parent)
     : QObject{parent}
-{}
+{
+    size = 6;
+}
 
 Buffer::Buffer(int size, QObject *parent)
     : QObject{parent}
