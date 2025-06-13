@@ -23,7 +23,7 @@ void Buffer::addCam(CameraData c)
     int index = this->buffUtils.tailCam % SIZE;
     m_camArray[index] = c;
     this->buffUtils.tailCam++;
-    this->buffUtils.headCam += (this->buffUtils.tailCam - this->buffUtils.headCam > SIZE);
+    this->buffUtils.headCam += ((this->buffUtils.tailCam - this->buffUtils.headCam) > SIZE);
 }
 
 bool Buffer::isSync()
