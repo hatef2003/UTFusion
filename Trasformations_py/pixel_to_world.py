@@ -1,5 +1,5 @@
 import numpy as np
-# import cv2
+import cv2
 
 def euler_angles_to_rotation_matrix(roll: float, pitch: float, yaw: float) -> np.ndarray:
     """
@@ -64,7 +64,7 @@ def pixel_to_world(
         raise ValueError("Depth must be positive and finite.")
 
     pts = np.array([[[float(u), float(v)]]], dtype=np.float32)  # shape (1,1,2)
-    # undistorted = cv2.undistortPoints(pts, camera_matrix, dist_coeffs, P=camera_matrix)
+    undistorted = cv2.undistortPoints(pts, camera_matrix, dist_coeffs, P=camera_matrix)
     u_ideal = undistorted[0, 0, 0]
     v_ideal = undistorted[0, 0, 1]
 
