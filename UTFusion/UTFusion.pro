@@ -28,3 +28,8 @@ HEADERS += \
     mockimagereceiver.h \
     mockradardata.h \
     sensorwrapper.h
+
+STATECHARTS +=
+
+DISTFILES += \
+    model.qmodel
