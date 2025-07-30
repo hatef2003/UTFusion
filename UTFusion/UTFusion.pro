@@ -8,6 +8,7 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         buffer.cpp \
+        camdata.cpp \
         datacontainer.cpp \
         fusion.cpp \
         main.cpp \
@@ -20,7 +21,13 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     buffer.h \
+    camdata.h \
     datacontainer.h \
     fusion.h \
     globals.h \
     sensorwrapper.h
+
+STATECHARTS +=
+
+DISTFILES += \
+    model.qmodel
