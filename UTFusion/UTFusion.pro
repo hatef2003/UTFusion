@@ -1,4 +1,4 @@
-QT = core gui core
+QT = core gui core network
 
 CONFIG += c++17 cmdline
 
@@ -12,6 +12,7 @@ SOURCES += \
         datacontainer.cpp \
         fusion.cpp \
         main.cpp \
+        mockradardata.cpp \
         sensorwrapper.cpp
 
 # Default rules for deployment.
@@ -25,6 +26,7 @@ HEADERS += \
     datacontainer.h \
     fusion.h \
     globals.h \
+    mockradardata.h \
     sensorwrapper.h
 
 STATECHARTS +=
