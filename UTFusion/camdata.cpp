@@ -26,14 +26,14 @@ void CamData::merge_images()
         throw 1;
 
         
-    for (int i = 0; i < this->len_imgboxes; i++)
+    for (int i = 0; i < this->len_imgboxes; i++) // O(image size)*2
     {
         uint16_t ulx = this->imgboxes[i][0], uly = this->imgboxes[i][1], brx = this->imgboxes[i][2], bry = this->imgboxes[i][3];
-        find_closest_point_in_box(ulx, uly, brx,bry);
+        find_closest_point_in_box(ulx, uly, brx,bry); // O(image size)
         if (min_radar_distance < min_cam_distance) continue;
-        
+
         float box_ratio = (float)min_radar_distance/(float)min_cam_distance;
-        for (int i = ulx; i < brx; i++)
+        for (int i = ulx; i < brx; i++) // O(image size)
             for (int j = uly; j < bry; j++)
                 if (cam_img[i][j] < min_cam_distance)
                     cam_img[i][j]*=box_ratio;
