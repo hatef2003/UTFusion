@@ -1,6 +1,7 @@
 QT += quick
 
 SOURCES += \
+        distancecalculator.cpp \
         main.cpp \
         pixeltoworld.cpp
 
@@ -20,4 +21,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    distancecalculator.h \
     pixeltoworld.h
