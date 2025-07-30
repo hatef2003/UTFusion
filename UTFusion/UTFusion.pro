@@ -11,6 +11,7 @@ SOURCES += \
         datacontainer.cpp \
         fusion.cpp \
         main.cpp \
+        mockimagereceiver.cpp \
         mockradardata.cpp \
         sensorwrapper.cpp
 
@@ -24,5 +25,6 @@ HEADERS += \
     datacontainer.h \
     fusion.h \
     globals.h \
+    mockimagereceiver.h \
     mockradardata.h \
     sensorwrapper.h
