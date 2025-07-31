@@ -51,11 +51,35 @@ float* PixelToWorld::pixelToWorld(const float pixel[2], float depth,
     float x_norm = (pixel[0] - intrinsics.cx) / intrinsics.fx;
     float y_norm = (pixel[1] - intrinsics.cy) / intrinsics.fy;
 
-    // Calculate 3D point in camera frame
-    QVector3D point_cam(x_norm * depth, y_norm * depth, depth);
+    float point_cam[3] = {x_norm * depth, y_norm * depth, depth};
 
-    // Transform to world frame: point_world = R * point_cam + t
-    QVector3D point_world = pose.rotationMatrix.map(point_cam) + pose.position;
+
+    // map according to QT, yeah i read the fucking library
+    float point_world[3];
+    point_world[0] = pose.rotationMatrix.m[0][0] * point_cam[0] +
+                        pose.rotationMatrix.m[0][1] * point_cam[1] +
+                        pose.rotationMatrix.m[0][2] * point_cam[2] +
+                        pose.rotationMatrix.m[0][3] * 1.0f;
+    point_world[1] = pose.rotationMatrix.m[1][0] * point_cam[0] +
+                        pose.rotationMatrix.m[1][1] * point_cam[1] +
+                        pose.rotationMatrix.m[1][2] * point_cam[2] +
+                        pose.rotationMatrix.m[1][3] * 1.0f;
+    point_world[2] = pose.rotationMatrix.m[2][0] * point_cam[0] +
+                        pose.rotationMatrix.m[2][1] * point_cam[1] +
+                        pose.rotationMatrix.m[2][2] * point_cam[2] +
+                        pose.rotationMatrix.m[2][3] * 1.0f;
+    w =             pose.rotationMatrix.m[3][0] * point_cam[0] +
+                        pose.rotationMatrix.m[3][1] * point_cam[1] +
+                        pose.rotationMatrix.m[3][2] * point_cam[2] +
+                        pose.rotationMatrix.m[3][3] * 1.0f;
+    point_world[0] /= w;
+    point_world[1] /= w;
+    point_world[2] /= w;
+
+    point_world[0] += pose.position[0];
+    point_world[1] += pose.position[1];
+    point_world[2] += pose.position[2];
+    //  = pose.rotationMatrix.map(point_cam) + pose.position;
 
     return point_world;
 }

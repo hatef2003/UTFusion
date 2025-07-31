@@ -6,16 +6,10 @@
 
 class PixelToWorld
 {
-    
 private:
-    CameraIntrinsics m_intrinsics;
-    CameraPose m_pose;
-    bool m_intrinsicsSet;
-    bool m_poseSet;
     struct Matrix4x4 {
         float m[4][4];
     };
-
 public:
     struct CameraIntrinsics {
         double fx, fy;    // Focal lengths
@@ -37,6 +31,13 @@ public:
         void updateRotationMatrix();
     };
 
+private:
+    CameraIntrinsics m_intrinsics;
+    CameraPose m_pose;
+    bool m_intrinsicsSet;
+    bool m_poseSet;
+
+public:
     explicit PixelToWorld();
     void setCameraIntrinsics(const CameraIntrinsics& intrinsics);
     void setCameraPose(const CameraPose& pose);
