@@ -1,14 +1,19 @@
-#include "pixeltoworld.h"
+#include "pixel2world.h"
 
 PixelToWorld::CameraPose::CameraPose(float pos[3], float rot[3])
-    : position(pos), rotation(rot)
 {
+    position[0] = pos[0];
+    position[1] = pos[1];
+    position[2] = pos[2];
+    rotation[0] = rot[0];
+    rotation[1] = rot[1];
+    rotation[2] = rot[2];
     updateRotationMatrix();
 }
 
 void PixelToWorld::CameraPose::updateRotationMatrix()
 {
-    rotationMatrix = PixelToWorld::eulerToRotationMatrix(
+    rotationMatrix = PixelToWorld::CameraPose::eulerToRotationMatrix(
         rotation[0], rotation[1], rotation[2]);
 }
 
@@ -68,7 +73,7 @@ float* PixelToWorld::pixelToWorld(const float pixel[2], float depth,
                         pose.rotationMatrix.m[2][1] * point_cam[1] +
                         pose.rotationMatrix.m[2][2] * point_cam[2] +
                         pose.rotationMatrix.m[2][3] * 1.0f;
-    w =             pose.rotationMatrix.m[3][0] * point_cam[0] +
+    float w =           pose.rotationMatrix.m[3][0] * point_cam[0] +
                         pose.rotationMatrix.m[3][1] * point_cam[1] +
                         pose.rotationMatrix.m[3][2] * point_cam[2] +
                         pose.rotationMatrix.m[3][3] * 1.0f;
@@ -84,7 +89,7 @@ float* PixelToWorld::pixelToWorld(const float pixel[2], float depth,
     return point_world;
 }
 
-Matrix4x4 PixelToWorld::eulerToRotationMatrix(float roll, float pitch, float yaw)
+PixelToWorld::Matrix4x4 PixelToWorld::CameraPose::eulerToRotationMatrix(float roll, float pitch, float yaw)
 {
     float cx = std::cos(roll),  sx = std::sin(roll);
     float cy = std::cos(pitch), sy = std::sin(pitch);

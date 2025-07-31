@@ -6,11 +6,10 @@
 
 class PixelToWorld
 {
-private:
+public:
     struct Matrix4x4 {
         float m[4][4];
     };
-public:
     struct CameraIntrinsics {
         double fx, fy;    // Focal lengths
         double cx, cy;    // Principal point
@@ -29,6 +28,13 @@ public:
         CameraPose() = default;
         CameraPose(float pos[3], float rot[3]);
         void updateRotationMatrix();
+
+        /**
+         * @brief Create rotation matrix from Euler angles (roll, pitch, yaw)
+         * Convention: R = R_z(yaw) * R_y(pitch) * R_x(roll)
+         */
+        Matrix4x4 eulerToRotationMatrix(float roll, float pitch, float yaw);
+
     };
 
 private:
@@ -58,17 +64,7 @@ public:
                                   const CameraIntrinsics& intrinsics,
                                   const CameraPose& pose);
 
-    /**
-     * @brief Create rotation matrix from Euler angles (roll, pitch, yaw)
-     * Convention: R = R_z(yaw) * R_y(pitch) * R_x(roll)
-     */
-    static Matrix4x4 eulerToRotationMatrix(float roll, float pitch, float yaw);
-
     static bool isValidDepth(float depth, float minDepth = 0.1f, float maxDepth = 100.0f);
-
-// signals:
-//     void worldPointCalculated(const QVector3D& worldPoint) const;
-//     void projectionError(const QString& error) const;
 
 };
 
