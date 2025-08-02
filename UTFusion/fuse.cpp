@@ -17,5 +17,5 @@ void Fuse::dataRecieve(const std::vector<std::vector<Fusion::PixelData> > &value
     // m_fusion->performFusion()
     mu->unlock();
     m_queue.enqueue(result);
-    emit OpraionDone();
+    emit OperationDone();
 }
