@@ -1,8 +1,5 @@
-#include "distancecalculator.h"
+#include "./FusionUtils/distance_calculator.h"
 #include <cmath>
-
-DistanceCalculator::DistanceCalculator()
-{}
 
 float DistanceCalculator::distance(float p1[3], float p2[3])
 {

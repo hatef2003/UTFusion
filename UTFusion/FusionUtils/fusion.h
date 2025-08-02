@@ -2,7 +2,7 @@
 #define FUSION_H
 
 #include "pixel2world.h"
-#include "distance_calculator.h"
+#include "./FusionUtils/distance_calculator.h"
 #include <vector>
 
 class Fusion
