@@ -14,7 +14,7 @@ public:
     void startServer(quint16 port = 8000);
 
 signals:
-    void imagesReceived(const QImage &img1, const QImage &img2);
+    void imagesReceived(const QImage &img1, const QImage &img2,qint64 timestamp );
 
 private slots:
     void onNewConnection();

@@ -47,7 +47,10 @@ void MockImageReceiver::onReadyRead()
         img1.loadFromData(img1Data);
         img2.loadFromData(img2Data);
 
-        emit imagesReceived(img1, img2);
+        //s
+        qint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+        emit imagesReceived(img1, img2, timestamp);  //gave timestamp as input, too
+
 
         buffer.remove(0, 4 + img1Size + 4 + img2Size);
     }
