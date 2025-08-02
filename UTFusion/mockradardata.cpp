@@ -26,7 +26,13 @@ void MockRadarData::onReadyRead()
         QList<uint> values;
         for (const QJsonValue &val : obj["values"].toArray())
             values.append(val.toInt());
-        qint64 timestamp = obj["timestamp"].toVariant().toLongLong();
+
+        //S: in here, we R getting info from Json:
+        // replace with this to get info from sensor: //cam - Radar
+        //Alternative to code below:
+        // qint64 timestamp = obj["timestamp"].toVariant().toLongLong();
+        qint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+
         emit dataReceived(values, timestamp);
     }
 }
