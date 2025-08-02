@@ -27,7 +27,7 @@ void erfanmocker::onReadyRead()
         std::vector<std::vector<PixelData>> mock_values;
         mock_values.reserve(obj["values"].toArray().size());
         QJsonArray valuesArray = obj["values"].toArray();
-
+        qint64 timestamp = obj["timestamp"].toVariant().toLongLong();
         for (const QJsonValue &value : valuesArray) {
             QJsonObject valueObj = value.toObject();
             std::vector<PixelData> pixelDataList;
@@ -43,7 +43,7 @@ void erfanmocker::onReadyRead()
             }
             mock_values.push_back(pixelDataList);
         }
-
+        qDebug() << "sdfsf" << timestamp;
         emit dataReceived(mock_values);
     }
 }
