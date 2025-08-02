@@ -3,7 +3,8 @@
 #include <cmath>
 #include <limits>
 
-Fusion::Fusion() : m_epsilon(1.0f)
+Fusion::Fusion()
+    : m_epsilon(1.0f)
 {
 }
 
