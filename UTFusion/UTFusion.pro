@@ -17,7 +17,6 @@ SOURCES += \
         buffer.cpp \
         datacontainer.cpp \
         # fusion.cpp \
-        lasersensor_vl531x.cpp \
         main.cpp \
         mockimagereceiver.cpp \
         mockradardata.cpp \
@@ -33,7 +32,6 @@ HEADERS += \
     datacontainer.h \
     # fusion.h \
     globals.h \
-    lasersensor_vl531x.h \
     mockimagereceiver.h \
     mockradardata.h \
     sensorwrapper.h
