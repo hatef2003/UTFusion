@@ -1,8 +1,6 @@
 #include "erfanmocker.h"
 #include <QJsonArray> // Add this include
 
-erfanmocker::erfanmocker() {}
-
 erfanmocker::erfanmocker(QObject *parent)
     : QObject(parent), server(new QTcpServer(this)), clientSocket(nullptr)
 {
