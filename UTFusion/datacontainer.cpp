@@ -26,7 +26,7 @@ void DataContainer::newCamData(Buffer::CameraData c)
 
 void DataContainer::newRadarData(Buffer::RadarData r)
 {
-    //s:
+    //s: (remove line be;ow so info will propagate)
     r.timestamp = (timestamp == -1) ? QDateTime::currentMSecsSinceEpoch() : timestamp;
     //origial: r.timestamp = QDateTime::currentMSecsSinceEpoch();
     int writeIndex = m_readIndex ^ 1;
