@@ -12,7 +12,7 @@ DataContainer::DataContainer(QObject *parent)
 
 void DataContainer::newCamData(Buffer::CameraData c)
 {
-    //s:
+    //s: (remove line be;ow so info will propagate)
     c.timestamp = (timestamp == -1) ? QDateTime::currentMSecsSinceEpoch() : timestamp;
     //original: c.timestamp = QDateTime::currentMSecsSinceEpoch();
     int writeIndex = m_readIndex ^ 1;
