@@ -28,7 +28,7 @@ void DataContainer::newRadarData(Buffer::RadarData r)
     //s: (the line below removed so info  propagates)
 
     //origial: r.timestamp = QDateTime::currentMSecsSinceEpoch();
-    // qDebug() << r.timestamp;
+    qDebug() << QDateTime::currentMSecsSinceEpoch() << r.timestamp;
     int writeIndex = m_readIndex ^ 1;
     m_buffers[writeIndex]->addRadar(r);
     if (m_buffers[writeIndex]->isSync()) {
