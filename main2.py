@@ -23,8 +23,10 @@ def generate_data():
             "pixels": generate_pixel_data()
         }
         values.append(value)
+    radarData = [random.randint(0, 3999) for _ in range(8)]
     payload = {
         "values": values,
+        "radarData": radarData,
         "timestamp": int(time.time() * 1000) - 80
     }
     return payload

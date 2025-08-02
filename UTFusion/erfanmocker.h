@@ -1,28 +1,24 @@
 #ifndef erfanmocker_H
 #define erfanmocker_H
 
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QObject>
 #include <QTcpServer>
 #include <QTcpSocket>
-#include <QJsonDocument>
-#include <QJsonObject>
-
-class erfanmocker : public QObject
+#include <./FusionUtils/fusion.h>
+#include <buffer.h>
+class ErfanMocker : public QObject
 {
     Q_OBJECT
 public:
-    explicit erfanmocker(QObject *parent = nullptr);
+    explicit ErfanMocker(QObject *parent = nullptr);
 
     void startServer(quint16 port = 8001);
-private:
-    struct PixelData {
-        float pixel_depth;
-        float pixel_pos_x;
-        float pixel_pos_y;
-    };
 
 signals:
-    void dataReceived(const std::vector<std::vector<PixelData>> &values);
+    void dataReceived(const std::vector<std::vector<Fusion::PixelData>> &values,
+                      Buffer::RadarData r);
 
 private slots:
     void onNewConnection();

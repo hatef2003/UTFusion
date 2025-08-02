@@ -21,6 +21,7 @@ SOURCES += \
         datacontainer.cpp \
         # fusion.cpp \
         erfanmocker.cpp \
+        fuse.cpp \
         main.cpp \
         mockimagereceiver.cpp \
         mockradardata.cpp \
@@ -39,6 +40,7 @@ HEADERS += \
     datacontainer.h \
     # fusion.h \
     erfanmocker.h \
+    fuse.h \
     globals.h \
     mockimagereceiver.h \
     mockradardata.h \
