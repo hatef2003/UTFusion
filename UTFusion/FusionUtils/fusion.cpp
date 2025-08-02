@@ -35,9 +35,16 @@ void Fusion::setEpsilon(float epsilon)
 std::vector<Fusion::FusionOutput> Fusion::performFusion(const ObjectVector& objects)
 {
     std::vector<FusionOutput> output(m_radars.size());
-    
-    for (const auto& object : objects) { // O(Nobj*Nimglen* (O(pixel2World) + 2Nradarlen + Nradarlen*O(logNfloatlen)))
+    bool is_pixel_seen[IMG_HEIGHT][IMG_WIDTH];
+    std::fill(&is_pixel_seen[0][0], &is_pixel_seen[0][0] + sizeof(is_pixel_seen) / sizeof(bool), false); // O(Nimglen)
+
+    for (const auto& object : objects) { // O(Nimglen* (O(pixel2World) + 2Nradarlen + Nradarlen*O(logNfloatlen)))
         for (const auto& pixel : object) {
+            if (is_pixel_seen[static_cast<int>(pixel.pixel_pos_y)][static_cast<int>(pixel.pixel_pos_x)])
+                continue;
+            else
+                is_pixel_seen[static_cast<int>(pixel.pixel_pos_y)][static_cast<int>(pixel.pixel_pos_x)] = true;
+
             float pixel_coords[2] = {pixel.pixel_pos_x, pixel.pixel_pos_y};
             float* world_pos = m_pixelToWorld.pixelToWorld(pixel_coords, pixel.pixel_depth);
             

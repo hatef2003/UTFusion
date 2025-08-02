@@ -4,6 +4,8 @@
 #include "./FusionUtils/distance_calculator.h"
 #include "pixel2world.h"
 #include <vector>
+#define IMG_WIDTH 640
+#define IMG_HEIGHT 480
 
 class Fusion
 {
