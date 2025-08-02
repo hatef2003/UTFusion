@@ -18,10 +18,9 @@ void Fusion::setCameraPose(const PixelToWorld::CameraPose& pose)
     m_pixelToWorld.setCameraPose(pose);
 }
 
-void Fusion::setRadars(const std::vector<RadarData>& radars)
+void Fusion::setRadars(const std::vector<RadarData>& radars)    // Nlog^2(N)
 {
     m_radars = radars;
-    // Sort radars by x-position for easier bracketing
     std::stable_sort(m_radars.begin(), m_radars.end(),
               [](const RadarData& a, const RadarData& b) {
                   return a.position_x < b.position_x;
@@ -35,57 +34,42 @@ void Fusion::setEpsilon(float epsilon)
 
 std::vector<Fusion::FusionOutput> Fusion::performFusion(const ObjectVector& objects)
 {
-    // Initialize output vector with size equal to radar count
     std::vector<FusionOutput> output(m_radars.size());
     
-    // Process each object
-    for (const auto& object : objects) {
-        // Process each pixel in the object
+    for (const auto& object : objects) { // O(Nobj*Nimglen* (O(pixel2World) + 2Nradarlen + Nradarlen*O(logNfloatlen)))
         for (const auto& pixel : object) {
-            // Convert pixel to world coordinates
             float pixel_coords[2] = {pixel.pixel_pos_x, pixel.pixel_pos_y};
             float* world_pos = m_pixelToWorld.pixelToWorld(pixel_coords, pixel.pixel_depth);
             
-            if (world_pos == nullptr) {
-                continue; // Skip invalid conversions
-            }
+            if (world_pos == nullptr) continue;
             
             float world_x = world_pos[0];
             float world_y = world_pos[1];
             float world_z = world_pos[2];
             
-            // Find the relevant radar(s)
             int left_radar, right_radar;
             std::vector<int> relevant_radars;
             
             if (findBracketingRadars(world_x, left_radar, right_radar)) {
-                // Point is between two radars
                 relevant_radars.push_back(left_radar);
                 relevant_radars.push_back(right_radar);
             } else {
-                // Point is outside the radar range, find closest
                 int closest = findClosestRadar(world_x);
                 relevant_radars.push_back(closest);
             }
             
-            // Process each relevant radar
             for (int radar_idx : relevant_radars) {
-                if (radar_idx < 0 || radar_idx >= static_cast<int>(m_radars.size())) {
-                    continue;
-                }
+                if (radar_idx < 0 || radar_idx >= static_cast<int>(m_radars.size())) continue;
                 
                 const RadarData& radar = m_radars[radar_idx];
                 
-                // Calculate distance from pixel world position to radar
                 float radar_pos[3] = {radar.position_x, radar.position_y, radar.position_z};
                 float pixel_world_pos[3] = {world_x, world_y, world_z};
                 
                 float calculated_distance = DistanceCalculator::distance(pixel_world_pos, radar_pos);
                 
-                // Calculate error
                 float error = std::abs(calculated_distance - radar.output_distance);
                 
-                // Check if this pixel is better than current output for this radar
                 if (error < m_epsilon && error < output[radar_idx].error) {
                     output[radar_idx].error = error;
                     output[radar_idx].pixel_pos_x = pixel.pixel_pos_x;
@@ -94,7 +78,6 @@ std::vector<Fusion::FusionOutput> Fusion::performFusion(const ObjectVector& obje
                 }
             }
             
-            // Clean up dynamically allocated memory
             delete[] world_pos;
         }
     }
@@ -102,11 +85,9 @@ std::vector<Fusion::FusionOutput> Fusion::performFusion(const ObjectVector& obje
     return output;
 }
 
-int Fusion::findClosestRadar(float world_x)
+int Fusion::findClosestRadar(float world_x) // O(N)
 {
-    if (m_radars.empty()) {
-        return -1;
-    }
+    if (m_radars.empty()) return -1;
     
     int closest_idx = 0;
     float min_distance = std::abs(world_x - m_radars[0].position_x);
@@ -124,23 +105,16 @@ int Fusion::findClosestRadar(float world_x)
 
 bool Fusion::findBracketingRadars(float world_x, int& left_radar, int& right_radar)
 {
-    if (m_radars.size() < 2) {
-        return false;
-    }
+    if (m_radars.size() < 2) return false;
+
+    if (world_x < m_radars.front().position_x || world_x > m_radars.back().position_x) return false;
     
-    // Check if world_x is outside the range of all radars
-    if (world_x < m_radars.front().position_x || world_x > m_radars.back().position_x) {
-        return false;
-    }
-    
-    // Find the bracketing radars
-    for (size_t i = 0; i < m_radars.size() - 1; ++i) {
+    for (size_t i = 0; i < m_radars.size() - 1; ++i)
         if (world_x >= m_radars[i].position_x && world_x <= m_radars[i + 1].position_x) {
             left_radar = static_cast<int>(i);
             right_radar = static_cast<int>(i + 1);
             return true;
         }
-    }
-    
+
     return false;
 }
