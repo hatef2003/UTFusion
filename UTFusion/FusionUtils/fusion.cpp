@@ -22,7 +22,7 @@ void Fusion::setRadars(const std::vector<RadarData>& radars)
 {
     m_radars = radars;
     // Sort radars by x-position for easier bracketing
-    std::sort(m_radars.begin(), m_radars.end(), 
+    std::stable_sort(m_radars.begin(), m_radars.end(),
               [](const RadarData& a, const RadarData& b) {
                   return a.position_x < b.position_x;
               });
