@@ -9,9 +9,11 @@ DataContainer::DataContainer(QObject *parent)
     m_buffers[1] = std::make_unique<Buffer>();
 }
 
+
 void DataContainer::newCamData(Buffer::CameraData c)
 {
-    c.timestamp = QDateTime::currentMSecsSinceEpoch();
+    c.timestamp = (timestamp == -1) ? QDateTime::currentMSecsSinceEpoch() : timestamp;
+    // c.timestamp = QDateTime::currentMSecsSinceEpoch();
     int writeIndex = m_readIndex ^ 1;
     m_buffers[writeIndex]->addCam(c);
     if (m_buffers[writeIndex]->isSync()) {
@@ -23,7 +25,9 @@ void DataContainer::newCamData(Buffer::CameraData c)
 
 void DataContainer::newRadarData(Buffer::RadarData r)
 {
-    r.timestamp = QDateTime::currentMSecsSinceEpoch();
+
+    r.timestamp = (timestamp == -1) ? QDateTime::currentMSecsSinceEpoch() : timestamp;
+    // r.timestamp = QDateTime::currentMSecsSinceEpoch();
     int writeIndex = m_readIndex ^ 1;
     m_buffers[writeIndex]->addRadar(r);
     if (m_buffers[writeIndex]->isSync()) {
