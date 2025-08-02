@@ -1,6 +1,7 @@
 #include "MockImageReceiver.h"
 #include "qdatetime.h"
 #include <QDataStream>
+#include<QTime>
 
 MockImageReceiver::MockImageReceiver(QObject *parent)
     : QObject(parent), server(new QTcpServer(this)), clientSocket(nullptr)

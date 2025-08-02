@@ -11,7 +11,7 @@ class MockImageReceiver : public QObject
     Q_OBJECT
 public:
     explicit MockImageReceiver(QObject *parent = nullptr);
-    void startServer(quint16 port = 8000);
+    void startServer(quint16 port = 8080);
 
 signals:
     //s:
