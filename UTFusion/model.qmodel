@@ -3939,6 +3939,11 @@
                                      </DElement>
                                     </base-DElement>
                                     <object>{00bc32df-0bc6-4ae7-9dc3-9aed57503f16}</object>
+                                    <stereotypes>
+                                     <qlist>
+                                      <item>control</item>
+                                     </qlist>
+                                    </stereotypes>
                                     <name>DataReceivePipeline</name>
                                     <pos>x:680;y:340</pos>
                                     <rect>x:-70;y:-35;w:140;h:70</rect>
@@ -4145,6 +4150,11 @@
                                      </DElement>
                                     </base-DElement>
                                     <object>{f3b46e5b-ed7c-4cd7-b5c6-246af8d0a471}</object>
+                                    <stereotypes>
+                                     <qlist>
+                                      <item>control</item>
+                                     </qlist>
+                                    </stereotypes>
                                     <name>FusionPipeline</name>
                                     <pos>x:530;y:580</pos>
                                     <rect>x:-55;y:-35;w:110;h:70</rect>
@@ -4493,6 +4503,11 @@
                                      </DElement>
                                     </base-DElement>
                                     <object>{e7298c45-a0d4-4db3-aa8e-4176332ee8d5}</object>
+                                    <stereotypes>
+                                     <qlist>
+                                      <item>component</item>
+                                     </qlist>
+                                    </stereotypes>
                                     <name>CamDistanceEstimation</name>
                                     <pos>x:370;y:1235</pos>
                                     <rect>x:-80;y:-35;w:160;h:70</rect>
@@ -4513,6 +4528,11 @@
                                      </DElement>
                                     </base-DElement>
                                     <object>{48fda79f-91f9-443f-81c3-e544da4fcc07}</object>
+                                    <stereotypes>
+                                     <qlist>
+                                      <item>component</item>
+                                     </qlist>
+                                    </stereotypes>
                                     <name>FusionPipeline</name>
                                     <pos>x:690;y:1240</pos>
                                     <rect>x:-55;y:-35;w:110;h:70</rect>
@@ -5121,6 +5141,11 @@
                              <base-MElement>
                               <MElement>
                                <uid>{00bc32df-0bc6-4ae7-9dc3-9aed57503f16}</uid>
+                               <stereotypes>
+                                <qlist>
+                                 <item>control</item>
+                                </qlist>
+                               </stereotypes>
                               </MElement>
                              </base-MElement>
                              <name>DataReceivePipeline</name>
@@ -5523,6 +5548,11 @@
                              <base-MElement>
                               <MElement>
                                <uid>{f3b46e5b-ed7c-4cd7-b5c6-246af8d0a471}</uid>
+                               <stereotypes>
+                                <qlist>
+                                 <item>control</item>
+                                </qlist>
+                               </stereotypes>
                               </MElement>
                              </base-MElement>
                              <name>FusionPipeline</name>
@@ -6023,6 +6053,11 @@
                              <base-MElement>
                               <MElement>
                                <uid>{e7298c45-a0d4-4db3-aa8e-4176332ee8d5}</uid>
+                               <stereotypes>
+                                <qlist>
+                                 <item>component</item>
+                                </qlist>
+                               </stereotypes>
                               </MElement>
                              </base-MElement>
                              <name>CamDistanceEstimation</name>
@@ -6119,6 +6154,11 @@
                              <base-MElement>
                               <MElement>
                                <uid>{48fda79f-91f9-443f-81c3-e544da4fcc07}</uid>
+                               <stereotypes>
+                                <qlist>
+                                 <item>component</item>
+                                </qlist>
+                               </stereotypes>
                               </MElement>
                              </base-MElement>
                              <name>FusionPipeline</name>
