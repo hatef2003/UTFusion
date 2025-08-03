@@ -1,7 +1,17 @@
 QT += quick
 
+# OpenCV configuration
+OPENCV_PATH = E:/openCV/opencv/build
+INCLUDEPATH += $$OPENCV_PATH/include
+
+# OpenCV libraries - update the version numbers to match your actual .lib files in OPENCV_PATH/x64/vc16/lib
+win32:CONFIG(release, debug|release): LIBS += -L$$OPENCV_PATH/x64/vc16/lib/ -lopencv_core4110 -lopencv_imgproc4110 -lopencv_calib3d4110
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OPENCV_PATH/x64/vc16/lib/ -lopencv_core4110 -lopencv_imgproc4110 -lopencv_calib3d4110
+
+# Add OpenCV DLL path to runtime (needed for Windows)
+win32: LIBS += -L$$OPENCV_PATH/x64/vc16/bin
+
 SOURCES += \
-        distancecalculator.cpp \
         main.cpp \
         pixeltoworld.cpp
 
@@ -21,5 +31,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    distancecalculator.h \
     pixeltoworld.h

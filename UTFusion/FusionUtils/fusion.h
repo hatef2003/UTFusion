@@ -6,6 +6,10 @@
 #include <vector>
 #define IMG_WIDTH 640
 #define IMG_HEIGHT 480
+#define CAM_FX 1146.3511547076373
+#define CAM_FY 1096.8692812423094
+#define CAM_CX 346.74179054850418
+#define CAM_CY 227.22216526982555
 
 class Fusion
 {

@@ -6,6 +6,8 @@
 Fusion::Fusion()
     : m_epsilon(1.0f)
 {
+    PixelToWorld::CameraIntrinsics ci = PixelToWorld::CameraIntrinsics(CAM_FX, CAM_FY, CAM_CX, CAM_CY);
+    this->setCameraIntrinsics(ci);
 }
 
 void Fusion::setCameraIntrinsics(const PixelToWorld::CameraIntrinsics& intrinsics)
