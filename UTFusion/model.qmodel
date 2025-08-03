@@ -54,7 +54,7 @@
                           </qlist>
                          </stereotypes>
                          <name>RadarArray</name>
-                         <pos>x:-810;y:-115</pos>
+                         <pos>x:-1005;y:-100</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -79,7 +79,7 @@
                           </qlist>
                          </stereotypes>
                          <name>StereoCam</name>
-                         <pos>x:-655;y:-115</pos>
+                         <pos>x:-850;y:-100</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -104,7 +104,7 @@
                           </qlist>
                          </stereotypes>
                          <name>SteroCamInterface</name>
-                         <pos>x:-655;y:120</pos>
+                         <pos>x:-850;y:135</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -130,7 +130,7 @@
                           </qlist>
                          </stereotypes>
                          <name>StereoCamReceiver</name>
-                         <pos>x:-655;y:0</pos>
+                         <pos>x:-850;y:15</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -224,7 +224,7 @@
                           </qlist>
                          </stereotypes>
                          <name>RadarArrayReceiver</name>
-                         <pos>x:-810;y:5</pos>
+                         <pos>x:-1005;y:20</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -295,7 +295,7 @@
                           </qlist>
                          </stereotypes>
                          <name>RadaArrayInterface</name>
-                         <pos>x:-810;y:120</pos>
+                         <pos>x:-1005;y:135</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -343,7 +343,7 @@
                           </qlist>
                          </stereotypes>
                          <name>StartAndSyncSignal</name>
-                         <pos>x:-835;y:-415</pos>
+                         <pos>x:-925;y:-405</pos>
                          <rect>x:-20;y:-20;w:40;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -398,8 +398,8 @@
                           </DElement>
                          </base-DElement>
                          <object>{815f5cbd-8ed8-4e73-b388-cac10066e524}</object>
-                         <name>TwoBuffer</name>
-                         <pos>x:-1130;y:155</pos>
+                         <name>Buffer</name>
+                         <pos>x:-1325;y:170</pos>
                          <rect>x:-140;y:-110;w:280;h:220</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -417,8 +417,8 @@
                         </DElement>
                        </base-DElement>
                        <text>DataReceivePipeline</text>
-                       <pos>x:-945;y:80</pos>
-                       <rect>x:-385;y:-385;w:770;h:770</rect>
+                       <pos>x:-1230;y:95</pos>
+                       <rect>x:-475;y:-385;w:950;h:770</rect>
                       </DBoundary>
                      </instance>
                     </item>
@@ -434,7 +434,7 @@
                          </base-DElement>
                          <object>{bd5ccd26-1ecd-44e9-9d36-5346906d2759}</object>
                          <name>DataContainer</name>
-                         <pos>x:-745;y:335</pos>
+                         <pos>x:-940;y:350</pos>
                          <rect>x:-170;y:-95;w:340;h:190</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -450,39 +450,141 @@
                      </instance>
                     </item>
                     <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
+                     <instance type="DComponent">
+                      <DComponent>
+                       <base-DObject>
+                        <DObject>
                          <base-DElement>
                           <DElement>
-                           <uid>{ef8a0cc2-56eb-4791-8755-a9f91df10911}</uid>
+                           <uid>{118d59b7-be8e-473d-883b-656246e80d6f}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{0c825640-6073-4f57-b60f-f15d4633fe11}</object>
-                         <a>{a4bff934-646b-421e-9d7d-2eb2143a5a73}</a>
-                         <b>{80fc5037-8899-4551-bcf4-6d122dc6b36f}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
+                         <object>{e4d32092-515d-4a54-b711-ee5f93e2f51b}</object>
+                         <name>YOLO</name>
+                         <pos>x:-530;y:200</pos>
+                         <rect>x:-45;y:-30;w:90;h:60</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                      </DComponent>
                      </instance>
                     </item>
                     <item>
-                     <instance type="DDependency">
-                      <DDependency>
-                       <base-DRelation>
-                        <DRelation>
+                     <instance type="DComponent">
+                      <DComponent>
+                       <base-DObject>
+                        <DObject>
                          <base-DElement>
                           <DElement>
-                           <uid>{1b2c7a6b-d9cb-4c8a-8489-56bb415ed8f3}</uid>
+                           <uid>{1dfce90e-5044-444f-af43-e0f6499cad7f}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{ceaa9e35-8660-4a79-a5b7-6fe5b20c3c1a}</object>
-                         <a>{520fc8bf-7a97-41f7-8a07-c6f112b04c28}</a>
-                         <b>{80fc5037-8899-4551-bcf4-6d122dc6b36f}</b>
-                        </DRelation>
-                       </base-DRelation>
-                      </DDependency>
+                         <object>{b9aefcb9-a5df-42af-8214-6fffb19832d1}</object>
+                         <name>CamDistanceEstimation</name>
+                         <pos>x:-525;y:355</pos>
+                         <rect>x:-95;y:-30;w:190;h:60</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                      </DComponent>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DBoundary">
+                      <DBoundary>
+                       <base-DElement>
+                        <DElement>
+                         <uid>{a59561cd-6435-4450-a530-72608b85a06c}</uid>
+                        </DElement>
+                       </base-DElement>
+                       <text>Fusion</text>
+                       <pos>x:210;y:490</pos>
+                       <rect>x:-585;y:-330;w:1170;h:660</rect>
+                      </DBoundary>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{7a839a39-8b3e-46c3-96d6-343832a6d4bd}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{b3aeda8c-987d-403c-9d3c-f675f344e2bd}</object>
+                         <name>Fusion</name>
+                         <pos>x:60;y:530</pos>
+                         <rect>x:-205;y:-145;w:410;h:290</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{15d2dc3e-7868-435c-86cb-29ae5159bf8a}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{316ffe3c-a489-4be3-ba84-6924df548e27}</object>
+                         <name>PixelData</name>
+                         <pos>x:510;y:695</pos>
+                         <rect>x:-140;y:-80;w:280;h:160</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{2ca1888d-a002-4d9a-bb4f-f8fc473a16da}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{8fee43cd-ee56-4c80-a799-6e0f06a33f79}</object>
+                         <name>RadarData</name>
+                         <pos>x:555;y:510</pos>
+                         <rect>x:-185;y:-85;w:370;h:170</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{7162a998-913b-4944-8697-b434a0bb10d4}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{ced7495b-e98b-4d8a-ab3e-4787d323a1c9}</object>
+                         <name>FusionOutput</name>
+                         <pos>x:525;y:310</pos>
+                         <rect>x:-155;y:-75;w:310;h:150</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
                      </instance>
                     </item>
                     <item>
@@ -492,12 +594,196 @@
                         <DRelation>
                          <base-DElement>
                           <DElement>
-                           <uid>{cc0c1c3a-e44f-4211-8286-93f5c7a11d72}</uid>
+                           <uid>{a40c7bed-7f44-4769-bfd1-e445cc4466a1}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{a7b83cba-e1bd-4ad1-aaf3-d8f399277088}</object>
+                         <object>{8911ab79-3ad3-4374-b58e-226de715f022}</object>
+                         <a>{7a839a39-8b3e-46c3-96d6-343832a6d4bd}</a>
+                         <b>{15d2dc3e-7868-435c-86cb-29ae5159bf8a}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>2</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{5850d35e-99de-41ae-9c3f-479e34451617}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{d6cdff20-058d-4982-b230-539ae31f868f}</object>
+                         <a>{7a839a39-8b3e-46c3-96d6-343832a6d4bd}</a>
+                         <b>{2ca1888d-a002-4d9a-bb4f-f8fc473a16da}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>2</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{2c341aba-8930-4033-8b21-786c74f845d0}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{69051ba7-92a3-4f2e-bfa4-40ffdce99d62}</object>
+                         <a>{7a839a39-8b3e-46c3-96d6-343832a6d4bd}</a>
+                         <b>{7162a998-913b-4944-8697-b434a0bb10d4}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>2</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{6aedb7b9-7638-4eee-9d16-50954deb0b2e}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{c2438d34-1fd2-40c8-9d77-975c116202fc}</object>
+                         <name>CameraData</name>
+                         <pos>x:-1410;y:-110</pos>
+                         <rect>x:-55;y:-50;w:110;h:100</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{d0c75ea9-c2d8-4ab9-8f2c-4efaab9c48f4}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{1fc0715f-8f72-4994-9fa1-6886ac171e2e}</object>
+                         <name>RadarData</name>
+                         <pos>x:-1600;y:-110</pos>
+                         <rect>x:-55;y:-80;w:110;h:160</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{438140c3-da4c-4a0c-b385-d47802790082}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{33349820-6024-4483-8dc9-c1b103a049fb}</object>
+                         <name>buffUtils</name>
+                         <pos>x:-1200;y:-105</pos>
+                         <rect>x:-75;y:-60;w:150;h:120</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{98de83fa-0d2e-4793-95e8-2ec459380237}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{a0188502-4c21-4aff-92a6-5c15e1b66612}</object>
+                         <a>{1ad2fb1d-5b9d-4e3b-a0d0-a4a9a1797094}</a>
+                         <b>{d0c75ea9-c2d8-4ab9-8f2c-4efaab9c48f4}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>2</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{5c6bf263-fceb-4fa7-9225-d73a1f09bfd3}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{de83efb8-86a6-4f5e-a717-e9da103c7781}</object>
                          <a>{80fc5037-8899-4551-bcf4-6d122dc6b36f}</a>
                          <b>{1ad2fb1d-5b9d-4e3b-a0d0-a4a9a1797094}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>2</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{deaaab63-6b25-4f94-99b6-a9539bc811cb}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{b862b24d-7884-4a5f-b3cd-cc218a784193}</object>
+                         <a>{1ad2fb1d-5b9d-4e3b-a0d0-a4a9a1797094}</a>
+                         <b>{438140c3-da4c-4a0c-b385-d47802790082}</b>
                         </DRelation>
                        </base-DRelation>
                        <a>
@@ -510,10 +796,386 @@
                       </DAssociation>
                      </instance>
                     </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{dd94df24-3892-4e0d-9f87-8760faefc269}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{904d3839-534b-4307-af71-c25bea7917bc}</object>
+                         <a>{1ad2fb1d-5b9d-4e3b-a0d0-a4a9a1797094}</a>
+                         <b>{6aedb7b9-7638-4eee-9d16-50954deb0b2e}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>2</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DBoundary">
+                      <DBoundary>
+                       <base-DElement>
+                        <DElement>
+                         <uid>{0b1c96b7-9c20-449c-95a2-d859d2e42a10}</uid>
+                        </DElement>
+                       </base-DElement>
+                       <text>DimensionalCalculations</text>
+                       <pos>x:185;y:-235</pos>
+                       <rect>x:-565;y:-330;w:1130;h:660</rect>
+                      </DBoundary>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{42ae7c79-b8da-4d56-af93-283c67f79ee1}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{671c2f3c-4972-4d00-87de-e2ff8c7e8a84}</object>
+                         <name>DistanceCalculator</name>
+                         <pos>x:400;y:-420</pos>
+                         <rect>x:-200;y:-60;w:400;h:120</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{4b8ef3b5-97b6-4076-875e-0a031c77b8df}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{f8f0af7f-9974-4b57-bf87-3a791a21c983}</object>
+                         <name>PixelToWorld</name>
+                         <pos>x:400;y:-115</pos>
+                         <rect>x:-320;y:-130;w:640;h:260</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{e6946802-0833-4539-aaa3-33b3d5b2a9bc}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{3c8f0f51-3bd4-4c08-8fab-eb549b0eae20}</object>
+                         <name>CameraPose</name>
+                         <pos>x:-195;y:-105</pos>
+                         <rect>x:-175;y:-85;w:350;h:170</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{c1c79b67-0284-4e74-9b43-e872ab698997}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{14bbfa3e-493f-4d7f-af27-c3338d770e07}</object>
+                         <name>CameraIntrinsics</name>
+                         <pos>x:-205;y:-275</pos>
+                         <rect>x:-165;y:-70;w:330;h:140</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{5bb9e638-f415-4cba-9805-b547b665fc9d}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{a6953964-7ca0-45ac-994f-69960759d75e}</object>
+                         <name>Matrix4x4</name>
+                         <pos>x:-165;y:40</pos>
+                         <rect>x:-40;y:-35;w:80;h:70</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{46049199-73fe-44e3-847c-81e0cf6534f1}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{3c1fd20b-b8a2-4f5a-8bf5-f158b3f84580}</object>
+                         <a>{4b8ef3b5-97b6-4076-875e-0a031c77b8df}</a>
+                         <b>{5bb9e638-f415-4cba-9805-b547b665fc9d}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>2</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{cb0e60f8-1b57-4654-b900-20290c75171b}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{8a9e5135-0dc7-41ff-8586-4d3212b7e322}</object>
+                         <a>{4b8ef3b5-97b6-4076-875e-0a031c77b8df}</a>
+                         <b>{e6946802-0833-4539-aaa3-33b3d5b2a9bc}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>2</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{0881fc70-b71d-493b-8658-6709bad27cfa}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{497af5c8-66a4-4c12-a439-aafffb912cb4}</object>
+                         <a>{4b8ef3b5-97b6-4076-875e-0a031c77b8df}</a>
+                         <b>{c1c79b67-0284-4e74-9b43-e872ab698997}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <navigable>true</navigable>
+                         <kind>2</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{f8fc22d5-b1a6-4788-b869-7d4370047702}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{83dde928-79f1-4a9a-ac4e-4aaf26c0c0cd}</object>
+                         <a>{4b8ef3b5-97b6-4076-875e-0a031c77b8df}</a>
+                         <b>{42ae7c79-b8da-4d56-af93-283c67f79ee1}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{ca5c4e7a-faf3-49f3-af17-a0a50a094633}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{eb874f44-0b23-4699-adc0-445199ae2903}</object>
+                         <a>{7a839a39-8b3e-46c3-96d6-343832a6d4bd}</a>
+                         <b>{4b8ef3b5-97b6-4076-875e-0a031c77b8df}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{c0712273-1354-4f0c-a059-844c858a8ee8}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{6e352abb-17b1-46f3-b24f-cf4f0c573b76}</object>
+                         <a>{1dfce90e-5044-444f-af43-e0f6499cad7f}</a>
+                         <b>{118d59b7-be8e-473d-883b-656246e80d6f}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{6c64f0d3-4192-4655-a92c-0bc57411113f}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{768fc495-6219-47a7-9d09-a705559d1c57}</object>
+                         <a>{1dfce90e-5044-444f-af43-e0f6499cad7f}</a>
+                         <b>{80fc5037-8899-4551-bcf4-6d122dc6b36f}</b>
+                         <name>CamData</name>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{744d56f2-cf31-4e4f-9c57-e9137b87d373}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{20922309-918f-4d0b-a4bf-626d37898ee6}</object>
+                         <a>{7a839a39-8b3e-46c3-96d6-343832a6d4bd}</a>
+                         <b>{1dfce90e-5044-444f-af43-e0f6499cad7f}</b>
+                         <name>ProcessedCamData</name>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{bf26e4c2-1f76-4b9c-a7cf-b707823c6294}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{59e62f7c-495c-499b-8ab2-4f136d5b223e}</object>
+                         <a>{7a839a39-8b3e-46c3-96d6-343832a6d4bd}</a>
+                         <b>{80fc5037-8899-4551-bcf4-6d122dc6b36f}</b>
+                         <name>RadarData</name>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DBoundary">
+                      <DBoundary>
+                       <base-DElement>
+                        <DElement>
+                         <uid>{059e0ca2-f4f0-4a74-8f59-306da11ec4da}</uid>
+                        </DElement>
+                       </base-DElement>
+                       <text>FusionPipeline</text>
+                       <pos>x:215;y:115</pos>
+                       <rect>x:-615;y:-770;w:1230;h:1540</rect>
+                      </DBoundary>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{8b51f136-fd3a-4355-a15f-35e924e56493}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{94cb6abd-2b3c-4618-af18-c79fa6b18241}</object>
+                         <a>{80fc5037-8899-4551-bcf4-6d122dc6b36f}</a>
+                         <b>{a4bff934-646b-421e-9d7d-2eb2143a5a73}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DDependency">
+                      <DDependency>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{5d90314b-8313-420f-b60b-5715a4255b62}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{056266c7-60f8-4204-93b7-1f8c1b8d0290}</object>
+                         <a>{80fc5037-8899-4551-bcf4-6d122dc6b36f}</a>
+                         <b>{520fc8bf-7a97-41f7-8a07-c6f112b04c28}</b>
+                        </DRelation>
+                       </base-DRelation>
+                      </DDependency>
+                     </instance>
+                    </item>
                    </qlist>
                   </elements>
-                  <last-modified>1754215351854</last-modified>
-                  <toolbarid>General</toolbarid>
+                  <last-modified>1754217459699</last-modified>
+                  <toolbarid>Activities</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
                </MCanvasDiagram>
@@ -1386,14 +2048,107 @@
                     <uid>{815f5cbd-8ed8-4e73-b388-cac10066e524}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>TwoBuffer</name>
+                  <name>Buffer</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{a0188502-4c21-4aff-92a6-5c15e1b66612}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{a0188502-4c21-4aff-92a6-5c15e1b66612}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{815f5cbd-8ed8-4e73-b388-cac10066e524}</a>
+                             <b>{1fc0715f-8f72-4994-9fa1-6886ac171e2e}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{b862b24d-7884-4a5f-b3cd-cc218a784193}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{b862b24d-7884-4a5f-b3cd-cc218a784193}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{815f5cbd-8ed8-4e73-b388-cac10066e524}</a>
+                             <b>{33349820-6024-4483-8dc9-c1b103a049fb}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>1</cardinality>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{904d3839-534b-4307-af71-c25bea7917bc}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{904d3839-534b-4307-af71-c25bea7917bc}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{815f5cbd-8ed8-4e73-b388-cac10066e524}</a>
+                             <b>{c2438d34-1fd2-40c8-9d77-975c116202fc}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
                  </MObject>
                 </base-MObject>
                 <members>
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{0728d61f-2fbf-49e5-b614-d38da7b8a448}</uid>
+                    <uid>{c57ef54d-dff3-40e2-81a0-b196cae4deb8}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>struct RadarData</declaration>
@@ -1401,7 +2156,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{30e4c4ec-32a6-4265-a61b-a2ef7f58f1e6}</uid>
+                    <uid>{4eaba5e9-2a2d-4c6d-a0d0-67223948f8ee}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>struct CameraData</declaration>
@@ -1409,7 +2164,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{bddeb620-d03d-492d-aa8c-cf7f58bee308}</uid>
+                    <uid>{f3e9ccbf-4856-4735-8660-5d7a2b203bf6}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>explicit Buffer()</declaration>
@@ -1417,7 +2172,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d3f4eb3f-3a18-4e10-81a2-a0563415db4d}</uid>
+                    <uid>{3fdb6383-ac15-4f76-a959-d366b8154604}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void addRadar(RadarData r)</declaration>
@@ -1425,7 +2180,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0280ffb8-9a26-4cb4-9cf3-12b279fafb46}</uid>
+                    <uid>{5b80883a-fef9-4004-b46f-912ad1a4ecfd}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void addCam(CameraData c)</declaration>
@@ -1433,7 +2188,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{810f24f2-b17d-4335-b1b9-9fa155c5c558}</uid>
+                    <uid>{eae6f34f-d0d1-44a6-9b90-2c7ba797f446}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>std::pair&lt;RadarData, CameraData&gt; read()</declaration>
@@ -1441,7 +2196,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b82f268e-8ad2-46fa-905d-0e4bb8ca6978}</uid>
+                    <uid>{955da616-dad4-404d-8d5e-ba9913c9f3fb}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>bool isSync()</declaration>
@@ -1449,7 +2204,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e109629b-fdc4-42b5-afa9-8ce4122c54e5}</uid>
+                    <uid>{85e24644-6eaa-4fb5-916f-ae6c2924fb66}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>struct buffUtils</declaration>
@@ -1457,7 +2212,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{732a90c8-e335-463c-bd17-c7c5bb3013ab}</uid>
+                    <uid>{165ba581-8dbd-4cd3-9590-9b5036894823}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::array&lt;RadarData, MAX_DATA&gt; m_radarArray</declaration>
@@ -1465,7 +2220,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{af135357-92fc-496e-9845-483592be7111}</uid>
+                    <uid>{9c4c0083-d819-4500-a6b9-00de289984a0}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::array&lt;CameraData, MAX_DATA&gt; m_camArray</declaration>
@@ -1515,12 +2270,107 @@
                            </base-MRelation>
                            <a>
                             <MAssociationEnd>
-                             <cardinality>1</cardinality>
+                             <cardinality>2</cardinality>
                              <navigable>true</navigable>
                              <kind>2</kind>
                             </MAssociationEnd>
                            </a>
                           </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{58e3426e-1835-407a-9304-d657e2fbb33d}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{58e3426e-1835-407a-9304-d657e2fbb33d}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{bd5ccd26-1ecd-44e9-9d36-5346906d2759}</a>
+                             <b>{b9aefcb9-a5df-42af-8214-6fffb19832d1}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{de83efb8-86a6-4f5e-a717-e9da103c7781}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{de83efb8-86a6-4f5e-a717-e9da103c7781}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{bd5ccd26-1ecd-44e9-9d36-5346906d2759}</a>
+                             <b>{815f5cbd-8ed8-4e73-b388-cac10066e524}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>2</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{94cb6abd-2b3c-4618-af18-c79fa6b18241}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{94cb6abd-2b3c-4618-af18-c79fa6b18241}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{bd5ccd26-1ecd-44e9-9d36-5346906d2759}</a>
+                             <b>{3d226c48-a07c-42c7-ac56-270125a294bd}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{056266c7-60f8-4204-93b7-1f8c1b8d0290}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{056266c7-60f8-4204-93b7-1f8c1b8d0290}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{bd5ccd26-1ecd-44e9-9d36-5346906d2759}</a>
+                             <b>{8aa4fe9e-273a-4fe9-8e69-1afa910aba2c}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
                          </instance>
                         </target>
                        </handle>
@@ -1540,7 +2390,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{3db16f15-9c16-4d6c-a63b-8b600481a5fc}</uid>
+                    <uid>{9a72ce31-ce01-4eb1-802b-a4838847b1fa}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>explicit DataContainer(QObject *parent = nullptr)</declaration>
@@ -1548,7 +2398,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{738d9add-3b8d-436f-a67a-99053d8c1cb6}</uid>
+                    <uid>{51fe6c9c-1d9b-41da-b576-0618669967b6}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void newCamData(Buffer::CameraData)</declaration>
@@ -1556,7 +2406,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6db361c9-6220-4bfd-aac1-da0e96d4131b}</uid>
+                    <uid>{e1d37980-86a7-44c2-a887-6c819446a734}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void newRadarData(Buffer::RadarData)</declaration>
@@ -1564,7 +2414,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{22c1d794-134e-4c96-b7d8-4961b8016f9e}</uid>
+                    <uid>{aed38beb-9185-48e5-943b-0580839f553f}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>std::pair&lt;Buffer::RadarData, Buffer::CameraData&gt; getData()</declaration>
@@ -1572,7 +2422,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{85f557eb-8d79-4703-a5bd-81e30da088f8}</uid>
+                    <uid>{2ca81db1-be21-43c8-a646-bd85776eebbc}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::array&lt;std::unique_ptr&lt;Buffer&gt;, 2&gt; m_buffers</declaration>
@@ -1580,7 +2430,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a10b827b-1703-4977-9b08-d4ade2a06b19}</uid>
+                    <uid>{cb4560f3-1fa2-4590-9b50-4dc4b9e31af9}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>unsigned int m_readIndex : 1</declaration>
@@ -1588,7 +2438,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{ef232e34-3e6d-4e1c-bab7-d09e3923447a}</uid>
+                    <uid>{8380f38e-aaa6-402d-ad12-05edf77e02e7}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>QMutex *mu</declaration>
@@ -1596,7 +2446,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3209afe7-9fa6-41d9-b2b7-05d5c41302af}</uid>
+                    <uid>{bdc5b793-e5ba-4c87-9d37-04a37e66ba39}</uid>
                     <visibility>4</visibility>
                     <type>2</type>
                     <declaration>void dataSync()</declaration>
@@ -1605,6 +2455,1394 @@
                  </qlist>
                 </members>
                </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{e4d32092-515d-4a54-b711-ee5f93e2f51b}</uid>
+             <target>
+              <instance type="MComponent">
+               <MComponent>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{e4d32092-515d-4a54-b711-ee5f93e2f51b}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>YOLO</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{45e1e141-d92d-4b72-aba4-40644d2ccf71}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{45e1e141-d92d-4b72-aba4-40644d2ccf71}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{e4d32092-515d-4a54-b711-ee5f93e2f51b}</a>
+                             <b>{b9aefcb9-a5df-42af-8214-6fffb19832d1}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+               </MComponent>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{b9aefcb9-a5df-42af-8214-6fffb19832d1}</uid>
+             <target>
+              <instance type="MComponent">
+               <MComponent>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{b9aefcb9-a5df-42af-8214-6fffb19832d1}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>CamDistanceEstimation</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{dd10e397-4fab-40bb-8e34-5f12aa824812}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{dd10e397-4fab-40bb-8e34-5f12aa824812}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{b9aefcb9-a5df-42af-8214-6fffb19832d1}</a>
+                             <b>{b3aeda8c-987d-403c-9d3c-f675f344e2bd}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{6e352abb-17b1-46f3-b24f-cf4f0c573b76}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{6e352abb-17b1-46f3-b24f-cf4f0c573b76}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{b9aefcb9-a5df-42af-8214-6fffb19832d1}</a>
+                             <b>{e4d32092-515d-4a54-b711-ee5f93e2f51b}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{768fc495-6219-47a7-9d09-a705559d1c57}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{768fc495-6219-47a7-9d09-a705559d1c57}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>CamData</name>
+                             <a>{b9aefcb9-a5df-42af-8214-6fffb19832d1}</a>
+                             <b>{bd5ccd26-1ecd-44e9-9d36-5346906d2759}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+               </MComponent>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{b3aeda8c-987d-403c-9d3c-f675f344e2bd}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{b3aeda8c-987d-403c-9d3c-f675f344e2bd}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Fusion</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{8911ab79-3ad3-4374-b58e-226de715f022}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{8911ab79-3ad3-4374-b58e-226de715f022}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{b3aeda8c-987d-403c-9d3c-f675f344e2bd}</a>
+                             <b>{316ffe3c-a489-4be3-ba84-6924df548e27}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{d6cdff20-058d-4982-b230-539ae31f868f}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{d6cdff20-058d-4982-b230-539ae31f868f}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{b3aeda8c-987d-403c-9d3c-f675f344e2bd}</a>
+                             <b>{8fee43cd-ee56-4c80-a799-6e0f06a33f79}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{69051ba7-92a3-4f2e-bfa4-40ffdce99d62}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{69051ba7-92a3-4f2e-bfa4-40ffdce99d62}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{b3aeda8c-987d-403c-9d3c-f675f344e2bd}</a>
+                             <b>{ced7495b-e98b-4d8a-ab3e-4787d323a1c9}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{eb874f44-0b23-4699-adc0-445199ae2903}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{eb874f44-0b23-4699-adc0-445199ae2903}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{b3aeda8c-987d-403c-9d3c-f675f344e2bd}</a>
+                             <b>{f8f0af7f-9974-4b57-bf87-3a791a21c983}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{20922309-918f-4d0b-a4bf-626d37898ee6}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{20922309-918f-4d0b-a4bf-626d37898ee6}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>ProcessedCamData</name>
+                             <a>{b3aeda8c-987d-403c-9d3c-f675f344e2bd}</a>
+                             <b>{b9aefcb9-a5df-42af-8214-6fffb19832d1}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{59e62f7c-495c-499b-8ab2-4f136d5b223e}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{59e62f7c-495c-499b-8ab2-4f136d5b223e}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <name>RadarData</name>
+                             <a>{b3aeda8c-987d-403c-9d3c-f675f344e2bd}</a>
+                             <b>{bd5ccd26-1ecd-44e9-9d36-5346906d2759}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{46f5eece-b597-4f9a-a878-27afb58646e3}</uid>
+                    <visibility>1</visibility>
+                    <type>1</type>
+                    <declaration>struct PixelData</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4c82007d-14c3-4609-bdfc-7d68a47e409e}</uid>
+                    <visibility>1</visibility>
+                    <type>1</type>
+                    <declaration>struct RadarData</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4385c223-d145-46b9-a05b-ce01379e8bf1}</uid>
+                    <visibility>1</visibility>
+                    <type>1</type>
+                    <declaration>struct FusionOutput</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b45e9665-dca0-47d8-920c-f6762853e5d4}</uid>
+                    <visibility>1</visibility>
+                    <type>1</type>
+                    <declaration>using ObjectVector</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a5b144b9-8c07-48d7-ae95-7d18fa754a1a}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>PixelToWorld m_pixelToWorld</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{526a35c1-2283-484d-9348-97bc32a0f726}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>std::vector&lt;RadarData&gt; m_radars</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{225b9bf0-a2a5-422c-97e1-604668b1293e}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>float m_epsilon</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b1a08768-d05b-4fa7-abca-a1fd5ef4fbcf}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <declaration>explicit Fusion()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ec371122-78c7-4609-b872-ca28a0b90f40}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <declaration>void setCameraIntrinsics(const PixelToWorld::CameraIntrinsics&amp; intrinsics)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{56ec9314-bca3-4577-b1d3-4ea36b605608}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <declaration>void setCameraPose(const PixelToWorld::CameraPose&amp; pose)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8041589f-47b9-4fb7-bf5b-877c82031768}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <declaration>void setRadars(const std::vector&lt;RadarData&gt;&amp; radars)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{cfde4392-8598-43bb-ab73-7f31e29c3f8b}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <declaration>void setEpsilon(float epsilon)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a5b14396-4552-490e-a752-3790a09da6c7}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <declaration>std::vector&lt;FusionOutput&gt; performFusion(const ObjectVector&amp; objects)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{bf9fad17-8e8a-42c8-8789-4b22155d28df}</uid>
+                    <visibility>3</visibility>
+                    <type>2</type>
+                    <declaration>int findClosestRadar(float world_x)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7c56a20b-0454-4d2e-9868-f4866859abf0}</uid>
+                    <visibility>3</visibility>
+                    <type>2</type>
+                    <declaration>bool findBracketingRadars(float world_x, int&amp; left_radar, int&amp; right_radar)</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{316ffe3c-a489-4be3-ba84-6924df548e27}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{316ffe3c-a489-4be3-ba84-6924df548e27}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>PixelData</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{76d6b1c9-3b9a-467d-a0f8-6ef946252e09}</uid>
+                    <type>1</type>
+                    <declaration>float pixel_depth</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{1bc731d1-a225-454f-8a32-0b26e7d5b037}</uid>
+                    <type>1</type>
+                    <declaration>float pixel_pos_x</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d71d0283-2532-4ba6-ab32-ae51407c7ca9}</uid>
+                    <type>1</type>
+                    <declaration>float pixel_pos_y</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{44a17276-e65e-444e-abc2-8ab5eac11a60}</uid>
+                    <type>2</type>
+                    <declaration>PixelData()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{fdcab97f-7ad9-4ac0-b88e-b908cafa3d3d}</uid>
+                    <type>2</type>
+                    <declaration>PixelData(float depth, float x, float y)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f1d72104-4d95-44d8-b7e7-ee5ca3a92a6f}</uid>
+                    <type>1</type>
+                    <declaration>pixel_depth(depth), pixel_pos_x(x), pixel_pos_y(y) {}</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{8fee43cd-ee56-4c80-a799-6e0f06a33f79}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{8fee43cd-ee56-4c80-a799-6e0f06a33f79}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>RadarData</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{efe2c499-21b1-45f0-a707-ad9c350c648d}</uid>
+                    <type>1</type>
+                    <declaration>float position_x</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{3ba35d89-f96c-4f68-852a-2d70a74fc21f}</uid>
+                    <type>1</type>
+                    <declaration>float position_y</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e8e11843-eb02-48aa-a43a-9dcf4064878a}</uid>
+                    <type>1</type>
+                    <declaration>float position_z</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{c13aa96e-d188-4ace-ad59-8c67f90e5fd7}</uid>
+                    <type>1</type>
+                    <declaration>float output_distance</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{5eaac048-93a2-4140-aa78-23c402a314b4}</uid>
+                    <type>2</type>
+                    <declaration>RadarData()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{9d0dcda6-df7a-4910-b887-68de6d8a90a4}</uid>
+                    <type>2</type>
+                    <declaration>RadarData(float x, float y, float z, float distance)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{bd7b5738-d751-43ea-8a50-64cc5703c121}</uid>
+                    <type>1</type>
+                    <declaration>position_x(x), position_y(y), position_z(z), output_distance(distance) {}</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{ced7495b-e98b-4d8a-ab3e-4787d323a1c9}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{ced7495b-e98b-4d8a-ab3e-4787d323a1c9}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>FusionOutput</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{4501d1ff-7e8c-42ae-b625-3d95338bfdb9}</uid>
+                    <type>1</type>
+                    <declaration>float error</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b708ca24-8f89-46b2-b5d3-424156babac9}</uid>
+                    <type>1</type>
+                    <declaration>float pixel_pos_x</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{cfe57b7e-c53d-4511-a1b1-e114617ed5a4}</uid>
+                    <type>1</type>
+                    <declaration>float pixel_pos_y</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{91e5cbe2-ae8d-426f-b9b1-135ab2d985ea}</uid>
+                    <type>1</type>
+                    <declaration>bool is_valid</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{66beccac-cc4f-4632-bcfe-588f8926b2c5}</uid>
+                    <type>1</type>
+                    <declaration>FusionOutput() : error(std::numeric_limits&lt;float&gt;::max()),</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d6bb918b-f683-4841-984a-4838450b6541}</uid>
+                    <type>1</type>
+                    <declaration>pixel_pos_x(0.0f), pixel_pos_y(0.0f), is_valid(false) {}</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{c2438d34-1fd2-40c8-9d77-975c116202fc}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{c2438d34-1fd2-40c8-9d77-975c116202fc}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>CameraData</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{5a6e1023-738d-459d-a8a0-ba5487590186}</uid>
+                    <type>1</type>
+                    <declaration>QImage *image1</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{188e2650-e29a-45f0-a21e-1b65708738b6}</uid>
+                    <type>1</type>
+                    <declaration>QImage *image2</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4b8f069a-9209-4d97-a90a-29a3bcceeb72}</uid>
+                    <type>1</type>
+                    <declaration>qint64 timestamp</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{1fc0715f-8f72-4994-9fa1-6886ac171e2e}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{1fc0715f-8f72-4994-9fa1-6886ac171e2e}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>RadarData</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{dc98c181-90f2-47c0-a2cf-01fd58b4bb9e}</uid>
+                    <type>1</type>
+                    <declaration>qint64 timestamp</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{de3eb32f-5412-48b0-a0e8-32b2a3fd9d6e}</uid>
+                    <type>1</type>
+                    <declaration>int a</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0b46107e-9ca9-42ca-8446-b09d7f6fabec}</uid>
+                    <type>1</type>
+                    <declaration>int b</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2caa7fc3-05ac-45f2-83c2-baf226650f25}</uid>
+                    <type>1</type>
+                    <declaration>int c</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{c5a6d14a-cddd-4103-af68-e9b2f04bee99}</uid>
+                    <type>1</type>
+                    <declaration>int d</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{c2cd6135-b627-4555-8283-255cf1578987}</uid>
+                    <type>1</type>
+                    <declaration>int e</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{db7d525b-fb66-4959-98f9-ff5ee7c6a253}</uid>
+                    <type>1</type>
+                    <declaration>int f</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{33349820-6024-4483-8dc9-c1b103a049fb}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{33349820-6024-4483-8dc9-c1b103a049fb}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>buffUtils</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{5e81a196-2b43-47ab-b825-1e8b4c0372f6}</uid>
+                    <type>1</type>
+                    <declaration>unsigned int headRadar:4</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6c078de3-cf49-4d39-9feb-0dfec78c2073}</uid>
+                    <type>1</type>
+                    <declaration>unsigned int tailRadar:4</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{aec36fb7-608b-4a49-860d-ac1c7681e375}</uid>
+                    <type>1</type>
+                    <declaration>unsigned int headCam:4</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{67b580bd-28fc-4a17-82a4-9903f47ba689}</uid>
+                    <type>1</type>
+                    <declaration>unsigned int tailCam:4</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{9f00ac70-f2cf-49d0-8ef8-bf38027aa5df}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{9f00ac70-f2cf-49d0-8ef8-bf38027aa5df}</uid>
+                   </MElement>
+                  </base-MElement>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{0b018d6a-e104-4280-8eda-c1b123448d2b}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>64</properties>
+                    <declaration>float distance(float p1[3], float p2[3])</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{585c08ec-1eae-4d0e-8bba-97f68fe4d495}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>64</properties>
+                    <declaration>float distance(float x1, float y1, float z1,                           float x2, float y2, float z2)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f0cd8c27-f19c-4685-b427-7ca349608ae4}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>64</properties>
+                    <declaration>float distanceSquared(float p1[3], float p2[3])</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7da98450-d0c3-413f-aa1d-66a04abe0e4f}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>64</properties>
+                    <declaration>float calculateDistance(float p1[3], float p2[3])</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{671c2f3c-4972-4d00-87de-e2ff8c7e8a84}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{671c2f3c-4972-4d00-87de-e2ff8c7e8a84}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>DistanceCalculator</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{54686224-355a-4adb-831f-420ff21821b5}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>64</properties>
+                    <declaration>float distance(float p1[3], float p2[3])</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d8471167-8a95-4c5f-8ba4-2ddecec50a73}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>64</properties>
+                    <declaration>float distance(float x1, float y1, float z1,                           float x2, float y2, float z2)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{57c28df4-81a4-44bf-862b-9df8d3d86e1e}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>64</properties>
+                    <declaration>float distanceSquared(float p1[3], float p2[3])</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{38bc322b-800b-45b6-9efc-bd5dc9d7db40}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>64</properties>
+                    <declaration>float calculateDistance(float p1[3], float p2[3])</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{f8f0af7f-9974-4b57-bf87-3a791a21c983}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{f8f0af7f-9974-4b57-bf87-3a791a21c983}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>PixelToWorld</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{3c1fd20b-b8a2-4f5a-8bf5-f158b3f84580}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{3c1fd20b-b8a2-4f5a-8bf5-f158b3f84580}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f8f0af7f-9974-4b57-bf87-3a791a21c983}</a>
+                             <b>{a6953964-7ca0-45ac-994f-69960759d75e}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{8a9e5135-0dc7-41ff-8586-4d3212b7e322}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{8a9e5135-0dc7-41ff-8586-4d3212b7e322}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f8f0af7f-9974-4b57-bf87-3a791a21c983}</a>
+                             <b>{3c8f0f51-3bd4-4c08-8fab-eb549b0eae20}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{497af5c8-66a4-4c12-a439-aafffb912cb4}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{497af5c8-66a4-4c12-a439-aafffb912cb4}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f8f0af7f-9974-4b57-bf87-3a791a21c983}</a>
+                             <b>{14bbfa3e-493f-4d7f-af27-c3338d770e07}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <navigable>true</navigable>
+                             <kind>2</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{83dde928-79f1-4a9a-ac4e-4aaf26c0c0cd}</uid>
+                        <target>
+                         <instance type="MDependency">
+                          <MDependency>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{83dde928-79f1-4a9a-ac4e-4aaf26c0c0cd}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f8f0af7f-9974-4b57-bf87-3a791a21c983}</a>
+                             <b>{671c2f3c-4972-4d00-87de-e2ff8c7e8a84}</b>
+                            </MRelation>
+                           </base-MRelation>
+                          </MDependency>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{774601c3-8fdb-4300-94e6-937af8b1c4c9}</uid>
+                    <visibility>1</visibility>
+                    <type>1</type>
+                    <declaration>struct Matrix4x4</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{71b8da01-310c-4c84-9bde-e6378f17fdd4}</uid>
+                    <visibility>1</visibility>
+                    <type>1</type>
+                    <declaration>struct CameraIntrinsics</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2586a312-4cd5-4b33-8886-c851f8c319aa}</uid>
+                    <visibility>1</visibility>
+                    <type>1</type>
+                    <declaration>struct CameraPose</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7a62545d-7a57-4b8a-b06a-a8d32ad952a8}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>CameraIntrinsics m_intrinsics</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8d3c5a08-822b-491a-ae74-02595e551154}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>CameraPose m_pose</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0cec309a-f4d6-4ec2-9917-6edc318d715c}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>bool m_intrinsicsSet</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f77286da-2c60-4967-ab98-bae7d0f00f87}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>bool m_poseSet</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8b484442-a190-47cc-947b-feb330d4a198}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <declaration>explicit PixelToWorld()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2a87194b-073f-471f-bbf6-e11907ef6d39}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <declaration>void setCameraIntrinsics(const CameraIntrinsics&amp; intrinsics)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{daf4eaad-16dc-4d1b-9793-9b45c968078d}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <declaration>void setCameraPose(const CameraPose&amp; pose)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{5d68d777-c446-45ec-84f7-14b93ad09a80}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>4</properties>
+                    <declaration>float* pixelToWorld(float pixel[2], float depth)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6de59ec8-bbd8-43a2-aef2-041e91f4f698}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>64</properties>
+                    <declaration>float* pixelToWorld(const float pixel[2], float depth,                                   const CameraIntrinsics&amp; intrinsics,                                   const CameraPose&amp; pose)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{33a94279-4ba5-4f55-8423-92933792df22}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>64</properties>
+                    <declaration>bool isValidDepth(float depth, float minDepth = 0.1f, float maxDepth = 100.0f)</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{3c8f0f51-3bd4-4c08-8fab-eb549b0eae20}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{3c8f0f51-3bd4-4c08-8fab-eb549b0eae20}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>CameraPose</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{38784ada-ec71-484d-917d-4b4bedd91ab0}</uid>
+                    <type>1</type>
+                    <declaration>float position[3]</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e2f95d6e-0faa-4239-9891-b527c23ff785}</uid>
+                    <type>1</type>
+                    <declaration>float rotation[3]</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f2d28500-7fac-4c9c-b042-69b016941509}</uid>
+                    <type>1</type>
+                    <declaration>Matrix4x4 rotationMatrix</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{086f5dbe-d8c7-4625-82e8-3951cc3ee6d5}</uid>
+                    <type>2</type>
+                    <declaration>CameraPose()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d6bcd75e-fb1e-4b0f-8029-9101837e05de}</uid>
+                    <type>2</type>
+                    <declaration>CameraPose(float pos[3], float rot[3])</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{22ce0ed4-814c-49e4-b2ec-ec78cca9b309}</uid>
+                    <type>2</type>
+                    <declaration>void updateRotationMatrix()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{aa902ffd-e17c-4274-ba3d-b8844f060705}</uid>
+                    <type>2</type>
+                    <declaration>Matrix4x4 eulerToRotationMatrix(float roll, float pitch, float yaw)</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{14bbfa3e-493f-4d7f-af27-c3338d770e07}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{14bbfa3e-493f-4d7f-af27-c3338d770e07}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>CameraIntrinsics</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{289d7e42-c1bc-440d-b838-05086a4d86fd}</uid>
+                    <type>1</type>
+                    <declaration>double fx, fy</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{223dfc20-8313-4c0f-a8a9-6070a0815d36}</uid>
+                    <type>1</type>
+                    <declaration>double cx, cy</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{e8b8ca66-ee7d-4c96-b416-5715ceb0f479}</uid>
+                    <type>2</type>
+                    <declaration>CameraIntrinsics()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{81a8bf6b-31fe-435a-9ddd-e0be2ae1d439}</uid>
+                    <type>2</type>
+                    <declaration>CameraIntrinsics(double fx, double fy, double cx, double cy)</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6d6be3f2-acc5-4e87-a468-875a0683e58b}</uid>
+                    <type>1</type>
+                    <declaration>fx(fx), fy(fy), cx(cx), cy(cy) {}</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{a6953964-7ca0-45ac-994f-69960759d75e}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{a6953964-7ca0-45ac-994f-69960759d75e}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Matrix4x4</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{1a618519-2e4c-40ff-96f8-d5d9828fb7be}</uid>
+                    <type>1</type>
+                    <declaration>float m[4][4]</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{46691163-2048-4193-bf1f-52b7923c2393}</uid>
+             <target>
+              <instance type="MItem">
+               <MItem>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{46691163-2048-4193-bf1f-52b7923c2393}</uid>
+                   </MElement>
+                  </base-MElement>
+                 </MObject>
+                </base-MObject>
+                <variety-editable>false</variety-editable>
+                <variety>start</variety>
+               </MItem>
               </instance>
              </target>
             </handle>
