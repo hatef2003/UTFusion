@@ -7,6 +7,8 @@
 #include <./FusionUtils/fusion.h>
 #include <buffer.h>
 
+#define RADARS_DISTANCE 10.0
+
 class Fuse : public QObject
 {
     Q_OBJECT
@@ -17,6 +19,8 @@ private:
     QMutex *mu;
     QQueue<std::vector<Fusion::FusionOutput>> m_queue;
     Fusion *m_fusion;
+    std::vector<Fusion::RadarData> m_radars;
+    void unsafeSetRadars(Buffer::RadarData r);
 signals:
     void OperationDone();
 public slots:
