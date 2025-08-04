@@ -39,6 +39,7 @@ void utFusionTests() {
         QTcpServer* eSrv = erfan.findChild<QTcpServer*>();
 
         TEST("App: Radar server listening on 8000", rSrv && rSrv->isListening() && rSrv->serverPort() == 8000);
+        TEST("App: ImageReceiver server listening on 8080", iSrv && iSrv->isListening() && iSrv->serverPort() == 8080);
 
     }
 
