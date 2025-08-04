@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
-    // utFusionTests();
+    utFusionTests();
 
     DataContainer dataContainer;
     MockRadarData radar;
