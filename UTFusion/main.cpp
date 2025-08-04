@@ -6,9 +6,14 @@
 #include "erfanmocker.h"
 #include<fuse.h>
 #include <buffer.h>
+#include "testsforutfusion.h"
+
 int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
+
+    // utFusionTests();
+
     DataContainer dataContainer;
     MockRadarData radar;
     MockImageReceiver mockImageReceiver;
@@ -41,5 +46,6 @@ int main(int argc, char *argv[])
     erfanMocker.startServer(8001); // Start server on port 8001
     Fuse fuse;
     QObject::connect(&erfanMocker, &ErfanMocker::dataReceived, &fuse, &Fuse::dataRecieve);
+
     return app.exec();
 }
