@@ -5,7 +5,10 @@ Fuse::Fuse(QObject *parent)
 {
     mu = new QMutex();
     m_fusion = new Fusion();
-    // m_fusion->setCameraPose();
+    float camera_position[3] = {5.0f, 10.0f, -10.0f};
+    float camera_rotation[3] = {0.0f, 0.0f, 0.0f};
+    PixelToWorld::CameraPose pose(camera_position, camera_rotation);
+    m_fusion->setCameraPose(pose);
     m_radars.resize(6);
     for (int i = 0; i < 6; ++i) {
         m_radars[i] = Fusion::RadarData((-2.5 + i) * RADARS_DISTANCE, 0, 0, -1);
