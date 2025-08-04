@@ -40,7 +40,7 @@ void utFusionTests() {
 
         TEST("App: Radar server listening on 8000", rSrv && rSrv->isListening() && rSrv->serverPort() == 8000);
         TEST("App: ImageReceiver server listening on 8080", iSrv && iSrv->isListening() && iSrv->serverPort() == 8080);
-
+        TEST("App: ErfanMocker server listening on 8001", eSrv && eSrv->isListening() && eSrv->serverPort() == 8001);
     }
 
 
