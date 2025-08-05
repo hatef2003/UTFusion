@@ -10,9 +10,8 @@ void buffer_test::run_all_buffer_tests() {
     struct Test { const char* name; bool (buffer_test::*fn)(); };
     Test tests[] = {
          {"testEmptyReadThrows",     &buffer_test::testEmptyReadThrows},
-        // {"testAddAndReadSync",      &buffer_test::testAddAndReadSync},
-        // {"testNotSyncBeyondDrift",  &buffer_test::testNotSyncBeyondDrift},
-        // {"testOverflowKeepsLatest", &buffer_test::testOverflowKeepsLatest}
+         {"testAddAndReadSync",      &buffer_test::testAddAndReadSync},
+         {"testNotSyncBeyondDrift",  &buffer_test::testNotSyncBeyondDrift}
     };
 
     int passed = 0;
@@ -37,3 +36,28 @@ bool buffer_test::testEmptyReadThrows() {
     }
     return false;      // no exception
 }
+
+
+bool buffer_test::testAddAndReadSync() {
+    Buffer buf;
+    Buffer::RadarData  r{1000,1,2,3,4,5,6};
+    Buffer::CameraData c{nullptr,nullptr,1000 + (TIMESTAMP_MAX_DRIFT/2)};
+    buf.addRadar(r);
+    buf.addCam(c);
+
+    if (!buf.isSync()) return false;
+
+    auto pr = buf.read();
+    return pr.first.timestamp == r.timestamp
+           && pr.second.timestamp == c.timestamp;
+}
+
+bool buffer_test::testNotSyncBeyondDrift() { //check if rdr & cam drift more than TIMESTAMP_MAX_DRIFT
+    Buffer buf;
+    Buffer::RadarData  r{2000,0,0,0,0,0,0};
+    Buffer::CameraData c{nullptr,nullptr,2000 + TIMESTAMP_MAX_DRIFT + 1};
+    buf.addRadar(r);
+    buf.addCam(c);
+    return !buf.isSync();
+}
+

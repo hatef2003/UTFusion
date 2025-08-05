@@ -9,9 +9,9 @@ public:
 
 private:
      bool testEmptyReadThrows();
-    // bool testAddAndReadSync();
-    // bool testNotSyncBeyondDrift();
-    // bool testOverflowKeepsLatest();
+    bool testAddAndReadSync();
+    bool testNotSyncBeyondDrift();
+
 };
 
 

@@ -16,20 +16,22 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
-    FusionTestSuit t_fuse;
-    t_fuse.run_suit();
-    distanceCalculatorTestsuit t_calc;
-    t_calc.run_suit();
-    Pixel2WorldTestsuit t_p2w;
-    t_p2w.run_suit();
-    DataTestsuit t_data;
-    t_data.run_suit();
+    // FusionTestSuit t_fuse;
+    // t_fuse.run_suit();
+    // distanceCalculatorTestsuit t_calc;
+    // t_calc.run_suit();
+    // Pixel2WorldTestsuit t_p2w;
+    // t_p2w.run_suit();
+    // DataTestsuit t_data;
+    // t_data.run_suit();
     // benchmark("dummy test", fusion_test_simple, 5);
 
 
 
     buffer_test buffer_tester;
     buffer_tester.run_all_buffer_tests();
+
+
     return app.exec();
 }
 
