@@ -19,17 +19,16 @@ void FusionTestSuit::setup()
 
     std::vector<Fusion::RadarData> radars = {
         {1.0f, 0.0f, 0.0f, 1.2f},
+        {1.0f, 0.0f, 0.0f, 1.2f},
+        {1.0f, 0.0f, 0.0f, 1.2f},
         {2.0f, 0.0f, 0.0f, 2.2f}
     };
     this->fusion->setRadars(radars);
     this->fusion->setEpsilon(0.5f);
 
-    this->objects = {
-        {
-            {1.2f, 320.0f, 240.0f},
-            {1.2f, 321.0f, 241.0f}
-        }
-    };
+    //TODO: fix size
+    this->objects = std::vector<std::vector<Fusion::PixelData>>(80, std::vector<Fusion::PixelData>
+                                                                (200*307, Fusion::PixelData(1.2f, 320.0f, 240.0f)));
 }
 
 void FusionTestSuit::test_perform_fusion()
