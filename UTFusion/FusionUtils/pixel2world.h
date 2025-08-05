@@ -9,6 +9,12 @@ class PixelToWorld
 public:
     struct Matrix4x4 {
         float m[4][4];
+        Matrix4x4() = default;
+        Matrix4x4(float _m[4][4]) {
+            for (int i = 0; i < 4; ++i)
+                for (int j = 0; j < 4; ++j)
+                    m[i][j] = _m[i][j];
+        }
     };
     struct CameraIntrinsics {
         double fx, fy;    // Focal lengths

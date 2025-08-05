@@ -18,6 +18,8 @@ public:
     void test_pixelToWorld();
     void test_pixelToWorld_static();
     void test_isValidDepth();
+    void test_updateRotationMatrix();
+    void test_eulerToRotationMatrix();
 
     QStringList run_suit();
 
