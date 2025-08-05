@@ -26,6 +26,7 @@ SOURCES += \
         erfanmocker.cpp \
         execution_time_tests/distance_calculator_testsuit.cpp \
         execution_time_tests/fusion_test_suit.cpp \
+        execution_time_tests/pixel2worldtestsuit.cpp \
         execution_time_tests/testsuit.cpp \
         fuse.cpp \
         main.cpp \
@@ -48,6 +49,7 @@ HEADERS += \
     erfanmocker.h \
     execution_time_tests/distance_calculator_testsuit.h \
     execution_time_tests/fusion_test_suit.h \
+    execution_time_tests/pixel2worldtestsuit.h \
     execution_time_tests/test-benchmark.h \
     execution_time_tests/testsuit.h \
     fuse.h \

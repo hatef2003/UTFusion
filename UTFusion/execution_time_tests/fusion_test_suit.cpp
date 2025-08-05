@@ -13,7 +13,7 @@ void FusionTestSuit::setup()
     intrinsics.cy = CAM_CY;
     this->fusion->setCameraIntrinsics(intrinsics);
 
-    float rot[3] = {0,0,0},pos[3] = {0,0,0};
+    float rot[3] = {0.123,1.23,2.123},pos[3] = {123.12,12.32,0.321};
     PixelToWorld::CameraPose pose(rot, pos);
     this->fusion->setCameraPose(pose);
 
