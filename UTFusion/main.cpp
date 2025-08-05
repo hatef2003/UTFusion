@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
-    benchmark("dummy test", fusion_test_simple);
+    benchmark("dummy test", fusion_test_simple, 5);
 
     return app.exec();
 }

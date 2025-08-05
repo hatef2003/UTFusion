@@ -20,16 +20,19 @@ long getMemoryUsageKB() {
 #endif
 
 template<typename Func>
-void benchmark(const QString& name, Func func) {
-    auto memBefore = getMemoryUsageBytes();
-    QElapsedTimer timer;
-    timer.start();
+void benchmark(const QString& name, Func func, int repeat=1) {
 
-    func();
+    for (int i=0; i<repeat;i++){
+        auto memBefore = getMemoryUsageBytes();
+        QElapsedTimer timer;
+        timer.start();
 
-    auto memAfter = getMemoryUsageBytes();
-    qint64 elapsed = timer.nsecsElapsed();
+        func();
 
-    qDebug() << name << "=> Time:" << elapsed << "ns,"
-             << "Memory:" << (memAfter - memBefore) << "B";
+        auto memAfter = getMemoryUsageBytes();
+        qint64 elapsed = timer.nsecsElapsed();
+
+        qDebug() << name << "(" << i+1 << ")"<<"=> Time:" << elapsed << "ns,"
+                 << "Memory:" << (memAfter - memBefore) << "B";
+    }
 }
