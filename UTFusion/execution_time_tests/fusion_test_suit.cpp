@@ -28,7 +28,7 @@ void FusionTestSuit::setup()
 
     //TODO: fix size
     this->objects = std::vector<std::vector<Fusion::PixelData>>(80, std::vector<Fusion::PixelData>
-                                                                (640*480, Fusion::PixelData(1.2f, 320.0f, 240.0f)));
+                                                                (100*100, Fusion::PixelData(1.2f, 320.0f, 240.0f)));
 }
 
 void FusionTestSuit::test_perform_fusion()
@@ -36,11 +36,20 @@ void FusionTestSuit::test_perform_fusion()
     this->fusion->performFusion(this->objects);
 }
 
+void FusionTestSuit::test_do_nothing() {
+
+}
+
 QStringList FusionTestSuit::run_suit()
 {
     QStringList results;
 
+    results << benchmark("doNothing", [this]() {
+        this->test_do_nothing();
+    }, 1);
+
     results << "FusionTestSuit:";
+
     results << benchmark("setup", [this]() {
         this->setup();
     }, 1);

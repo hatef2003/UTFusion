@@ -4,8 +4,8 @@
 #include "./FusionUtils/distance_calculator.h"
 #include "pixel2world.h"
 #include <vector>
-#define IMG_WIDTH 640
-#define IMG_HEIGHT 480
+#define IMG_WIDTH 100
+#define IMG_HEIGHT 100
 #define CAM_FX 1146.3511547076373
 #define CAM_FY 1096.8692812423094
 #define CAM_CX 346.74179054850418

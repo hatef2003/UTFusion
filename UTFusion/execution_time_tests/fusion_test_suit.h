@@ -13,6 +13,7 @@ class FusionTestSuit : TestSuit
 public:
     FusionTestSuit();
     void setup();
+    void test_do_nothing();
     void test_perform_fusion();
 
     QStringList run_suit();

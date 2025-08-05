@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cmath>
 #include <limits>
+#include <QDebug>
 
 Fusion::Fusion()
     : m_epsilon(1.0f)
@@ -42,16 +43,17 @@ std::vector<Fusion::FusionOutput> Fusion::performFusion(const ObjectVector& obje
 
     for (const auto& object : objects) { // O(Nimglen* (O(pixel2World) + 2Nradarlen + Nradarlen*O(logNfloatlen)))
         for (const auto& pixel : object) {
+
             if (is_pixel_seen[static_cast<int>(pixel.pixel_pos_y)][static_cast<int>(pixel.pixel_pos_x)])
                 continue;
             else
                 is_pixel_seen[static_cast<int>(pixel.pixel_pos_y)][static_cast<int>(pixel.pixel_pos_x)] = true;
+            // qDebug() << "fuxk";
 
             float pixel_coords[2] = {pixel.pixel_pos_x, pixel.pixel_pos_y};
             float* world_pos = m_pixelToWorld.pixelToWorld(pixel_coords, pixel.pixel_depth);
-            
-            if (world_pos == nullptr) continue;
-            
+            if (world_pos == nullptr)
+                continue;
             float world_x = world_pos[0];
             float world_y = world_pos[1];
             float world_z = world_pos[2];
