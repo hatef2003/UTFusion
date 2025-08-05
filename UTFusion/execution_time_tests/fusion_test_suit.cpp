@@ -39,6 +39,7 @@ void FusionTestSuit::test_perform_fusion()
 QStringList FusionTestSuit::run_suit()
 {
     QStringList results;
+
     results << "FusionTestSuit:";
     results << benchmark("setup", [this]() {
         this->setup();
@@ -48,7 +49,7 @@ QStringList FusionTestSuit::run_suit()
     }, 5);
 
     for (const QString& line : results) {
-        qDebug() << "Logged:" << line;
+        qDebug() << line;
     }
 
     return results;
