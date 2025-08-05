@@ -6,7 +6,7 @@
 #include <array>
 #include <globals.h>
 #define MAX_DATA 20
-#define SIZE 6 // max 16
+#define RADAR_SIZE 6 // max 16
 
 class Buffer
 {

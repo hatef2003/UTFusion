@@ -1,35 +1,34 @@
-#include <QElapsedTimer>
-#include <QDebug>
+#include "FusionUtils/pixel2world.h"
+#include "FusionUtils/distance_calculator.h"
+#include "FusionUtils/fusion.h"
 
-#ifdef Q_OS_WIN
-#include <windows.h>
-#include <psapi.h>
+void fusion_test_simple() {
+    Fusion fusion;
 
-size_t getMemoryUsageKB() {
-    PROCESS_MEMORY_COUNTERS pmc;
-    GetProcessMemoryInfo(GetCurrentProcess(), &pmc, sizeof(pmc));
-    return pmc.WorkingSetSize / 1024;
-}
-#elif defined(Q_OS_UNIX)
-#include <sys/resource.h>
-long getMemoryUsageKB() {
-    struct rusage usage;
-    getrusage(RUSAGE_SELF, &usage);
-    return usage.ru_maxrss;
-}
-#endif
+    PixelToWorld::CameraIntrinsics intrinsics;
+    intrinsics.fx = CAM_FX;
+    intrinsics.fy = CAM_FY;
+    intrinsics.cx = CAM_CX;
+    intrinsics.cy = CAM_CY;
+    fusion.setCameraIntrinsics(intrinsics);
 
-template<typename Func>
-void benchmark(const QString& name, Func func) {
-    auto memBefore = getMemoryUsageKB();
-    QElapsedTimer timer;
-    timer.start();
+    float rot[3] = {0,0,0},pos[3] = {0,0,0};
+    PixelToWorld::CameraPose pose(rot, pos);
+    fusion.setCameraPose(pose);
 
-    func();
+    std::vector<Fusion::RadarData> radars = {
+        {1.0f, 0.0f, 0.0f, 1.2f},
+        {2.0f, 0.0f, 0.0f, 2.2f}
+    };
+    fusion.setRadars(radars);
+    fusion.setEpsilon(0.5f);
 
-    auto memAfter = getMemoryUsageKB();
-    qint64 elapsed = timer.elapsed();
+    Fusion::ObjectVector objects = {
+        {
+            {1.2f, 320.0f, 240.0f},
+            {1.2f, 321.0f, 241.0f}
+        }
+    };
 
-    qDebug() << name << "→ Time:" << elapsed << "ms,"
-             << "Memory:" << (memAfter - memBefore) << "KB";
+    std::vector<Fusion::FusionOutput> results = fusion.performFusion(objects);
 }

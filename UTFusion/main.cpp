@@ -6,16 +6,14 @@
 #include "erfanmocker.h"
 #include<fuse.h>
 #include <buffer.h>
-#include "testsforutfusion.h"
-
+#include "execution_time_tests/fusion-tests.cpp"
+#include "execution_time_tests/test-benchmark.cpp"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
-    // utFusionTests();
-
-    benchmark("Sorting Test", testSorting);
+    benchmark("dummy test", fusion_test_simple);
 
     return app.exec();
 }
