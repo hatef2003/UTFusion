@@ -7,7 +7,7 @@ class TestSuit
 {
 public:
     TestSuit();
-    virtual void run_suit() = 0;
+    virtual QStringList run_suit() = 0;
     virtual void setup() = 0;
 
 };

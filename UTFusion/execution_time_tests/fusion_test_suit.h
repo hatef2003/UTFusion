@@ -15,7 +15,7 @@ public:
     void setup();
     void test_perform_fusion();
 
-    void run_suit();
+    QStringList run_suit();
 };
 
 #endif // FUSION_TEST_SUIT_H

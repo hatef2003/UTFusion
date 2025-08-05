@@ -36,10 +36,20 @@ void FusionTestSuit::test_perform_fusion()
     this->fusion->performFusion(this->objects);
 }
 
-void FusionTestSuit::run_suit()
+QStringList FusionTestSuit::run_suit()
 {
-    this->setup();
-    benchmark("dummy test", [this]() {
+    QStringList results;
+    results << "FusionTestSuit:";
+    results << benchmark("setup", [this]() {
+        this->setup();
+    }, 1);
+    results << benchmark("performFusion", [this]() {
         this->test_perform_fusion();
     }, 5);
+
+    for (const QString& line : results) {
+        qDebug() << "Logged:" << line;
+    }
+
+    return results;
 }

@@ -27,7 +27,8 @@ inline size_t getMemoryUsageBytes() {
 #endif
 
 template<typename Func>
-void benchmark(const QString& name, Func func, int repeat = 1) {
+QStringList benchmark(const QString& name, Func func, int repeat = 1) {
+    QStringList results;
     for (int i = 0; i < repeat; ++i) {
         auto memBefore = getMemoryUsageBytes();
         QElapsedTimer timer;
@@ -38,10 +39,15 @@ void benchmark(const QString& name, Func func, int repeat = 1) {
         auto memAfter = getMemoryUsageBytes();
         qint64 elapsed = timer.nsecsElapsed();
 
-        qDebug() << name << "(" << i + 1 << ")"
-                 << "=> Time:" << elapsed << "ns,"
-                 << "Memory:" << (memAfter - memBefore) << "B";
+
+        QString result = QString("%1 (%2) => Time: %3 ns, Memory: %4 B")
+                             .arg(name)
+                             .arg(i + 1)
+                             .arg(elapsed)
+                             .arg(memAfter - memBefore);
+        results << result;
     }
+    return results;
 }
 
 #endif // BENCHMARK_UTILS_H
