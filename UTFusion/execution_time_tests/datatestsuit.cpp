@@ -11,9 +11,9 @@ void DataTestsuit::setup()
 
 void DataTestsuit::setup_buf()
 {
-    QImage img1(640, 480, QImage::Format_RGB32);
+    QImage img1(100, 100, QImage::Format_RGB32);
     img1.fill(Qt::black);
-    QImage img2(640, 480, QImage::Format_RGB32);
+    QImage img2(100, 100, QImage::Format_RGB32);
     img2.fill(Qt::white);
 
     this->buf.addRadar({2100, 1, 2, 3, 4, 5, 6});
@@ -25,8 +25,8 @@ void DataTestsuit::setup_container()
     qint64 timestamp = QDateTime::currentMSecsSinceEpoch();
 
     Buffer::RadarData radarData = {timestamp, 1, 2, 3, 4, 5, 6};
-    QImage* img1 = new QImage(640, 480, QImage::Format_RGB32);
-    QImage* img2 = new QImage(640, 480, QImage::Format_RGB32);
+    QImage* img1 = new QImage(100, 100, QImage::Format_RGB32);
+    QImage* img2 = new QImage(100, 100, QImage::Format_RGB32);
     img1->fill(Qt::black);
     img2->fill(Qt::white);
     Buffer::CameraData camData = {img1, img2, timestamp};

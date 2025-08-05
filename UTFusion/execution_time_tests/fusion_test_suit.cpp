@@ -28,7 +28,7 @@ void FusionTestSuit::setup()
 
     //TODO: fix size
     this->objects = std::vector<std::vector<Fusion::PixelData>>(80, std::vector<Fusion::PixelData>
-                                                                (100*100, Fusion::PixelData(1.2f, 320.0f, 240.0f)));
+                                                                (100*100, Fusion::PixelData(1.2f, 92.0f, 40.0f)));
 }
 
 void FusionTestSuit::test_perform_fusion()
