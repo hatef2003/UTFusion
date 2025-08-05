@@ -24,8 +24,8 @@ SOURCES += \
         datacontainer.cpp \
         # fusion.cpp \
         erfanmocker.cpp \
-        execution_time_tests/fusion-tests.cpp \
-        execution_time_tests/test-benchmark.cpp \
+        execution_time_tests/fusion_test_suit.cpp \
+        execution_time_tests/testsuit.cpp \
         fuse.cpp \
         main.cpp \
         mockimagereceiver.cpp \
@@ -45,6 +45,9 @@ HEADERS += \
     datacontainer.h \
     # fusion.h \
     erfanmocker.h \
+    execution_time_tests/fusion_test_suit.h \
+    execution_time_tests/test-benchmark.h \
+    execution_time_tests/testsuit.h \
     fuse.h \
     globals.h \
     mockimagereceiver.h \
