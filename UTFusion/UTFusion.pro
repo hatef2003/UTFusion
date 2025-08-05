@@ -34,7 +34,7 @@ SOURCES += \
         mockimagereceiver.cpp \
         mockradardata.cpp \
         sensorwrapper.cpp \
-        testsforutfusion.cpp
+        accuracy_tests/testsforutfusion.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -60,7 +60,7 @@ HEADERS += \
     mockimagereceiver.h \
     mockradardata.h \
     sensorwrapper.h \
-    testsforutfusion.h
+    accuracy_tests/testsforutfusion.h
 
 STATECHARTS +=
 
