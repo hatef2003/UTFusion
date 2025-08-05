@@ -71,7 +71,7 @@ QStringList DataTestsuit::run_suit()
 
     results << benchmark("container_getData", [this]() {
         this->test_container_getData();
-    }, 5);
+    }, 1);
 
     for (const QString& line : results) {
         qDebug() << line;
