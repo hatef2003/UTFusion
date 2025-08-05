@@ -24,12 +24,13 @@ SOURCES += \
         datacontainer.cpp \
         # fusion.cpp \
         erfanmocker.cpp \
+        execution_time_tests/fusion-tests.cpp \
+        execution_time_tests/test-benchmark.cpp \
         fuse.cpp \
         main.cpp \
         mockimagereceiver.cpp \
         mockradardata.cpp \
-        sensorwrapper.cpp \
-        testsforutfusion.cpp
+        sensorwrapper.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -48,8 +49,7 @@ HEADERS += \
     globals.h \
     mockimagereceiver.h \
     mockradardata.h \
-    sensorwrapper.h \
-    testsforutfusion.h
+    sensorwrapper.h
 
 STATECHARTS +=
 
