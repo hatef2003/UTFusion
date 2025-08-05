@@ -24,6 +24,7 @@ SOURCES += \
         datacontainer.cpp \
         # fusion.cpp \
         erfanmocker.cpp \
+        execution_time_tests/datatestsuit.cpp \
         execution_time_tests/distance_calculator_testsuit.cpp \
         execution_time_tests/fusion_test_suit.cpp \
         execution_time_tests/pixel2worldtestsuit.cpp \
@@ -47,6 +48,7 @@ HEADERS += \
     datacontainer.h \
     # fusion.h \
     erfanmocker.h \
+    execution_time_tests/datatestsuit.h \
     execution_time_tests/distance_calculator_testsuit.h \
     execution_time_tests/fusion_test_suit.h \
     execution_time_tests/pixel2worldtestsuit.h \
