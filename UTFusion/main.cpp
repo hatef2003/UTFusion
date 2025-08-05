@@ -10,6 +10,7 @@
 #include "execution_time_tests/distance_calculator_testsuit.h"
 #include "execution_time_tests/pixel2worldtestsuit.h"
 #include "execution_time_tests/datatestsuit.h"
+#include "accuracy_tests/buffer_test.h"
 
 int main(int argc, char *argv[])
 {
@@ -25,6 +26,10 @@ int main(int argc, char *argv[])
     t_data.run_suit();
     // benchmark("dummy test", fusion_test_simple, 5);
 
+
+
+    buffer_test buffer_tester;
+    buffer_tester.run_all_buffer_tests();
     return app.exec();
 }
 

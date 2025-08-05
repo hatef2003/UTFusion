@@ -20,6 +20,7 @@ SOURCES += \
         FusionUtils/distance_calculator.cpp \
         FusionUtils/fusion.cpp \
         FusionUtils/pixel2world.cpp \
+        accuracy_tests/buffer_test.cpp \
         buffer.cpp \
         datacontainer.cpp \
         # fusion.cpp \
@@ -45,6 +46,7 @@ HEADERS += \
     FusionUtils/distance_calculator.h \
     FusionUtils/fusion.h \
     FusionUtils/pixel2world.h \
+    accuracy_tests/buffer_test.h \
     buffer.h \
     datacontainer.h \
     # fusion.h \
