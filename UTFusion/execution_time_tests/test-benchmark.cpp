@@ -5,10 +5,10 @@
 #include <windows.h>
 #include <psapi.h>
 
-size_t getMemoryUsageKB() {
+size_t getMemoryUsageBytes() {
     PROCESS_MEMORY_COUNTERS pmc;
     GetProcessMemoryInfo(GetCurrentProcess(), &pmc, sizeof(pmc));
-    return pmc.WorkingSetSize / 1024;
+    return pmc.WorkingSetSize;
 }
 #elif defined(Q_OS_UNIX)
 #include <sys/resource.h>
@@ -21,15 +21,15 @@ long getMemoryUsageKB() {
 
 template<typename Func>
 void benchmark(const QString& name, Func func) {
-    auto memBefore = getMemoryUsageKB();
+    auto memBefore = getMemoryUsageBytes();
     QElapsedTimer timer;
     timer.start();
 
     func();
 
-    auto memAfter = getMemoryUsageKB();
-    qint64 elapsed = timer.elapsed();
+    auto memAfter = getMemoryUsageBytes();
+    qint64 elapsed = timer.nsecsElapsed();
 
-    qDebug() << name << "→ Time:" << elapsed << "ms,"
-             << "Memory:" << (memAfter - memBefore) << "KB";
+    qDebug() << name << "=> Time:" << elapsed << "ns,"
+             << "Memory:" << (memAfter - memBefore) << "B";
 }
