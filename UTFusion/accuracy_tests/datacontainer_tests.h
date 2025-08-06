@@ -8,7 +8,9 @@ public:
     void run_all_datacontainer_tests();
 
 private:
-
+    bool testGetDataBeforeAny();
+    bool testSyncAfterRadarThenCam();
+    bool testSyncAfterCamThenRadar();
 };
 
 #endif // DATACONTAINER_TESTS_H
