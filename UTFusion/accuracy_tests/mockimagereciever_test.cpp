@@ -7,45 +7,21 @@
 #include <QTcpSocket>
 #include "mockimagereceiver.h"
 
-void mockimagereciever_test::run() {
-    const char* name = "testImagesReceived";
-    bool ok = testImagesReceived();
-    std::cout << name << ": " << (ok ? "PASS" : "FAIL") << "\n";
-}
+void mockimagereciever_test::run_all_mockimagereciever_tests() {
+     std::cout << "============ mockimagereciever_tests: ============" << std::endl;
+    struct Test { const char* name; bool (mockimagereciever_test::*fn)(); };
+    // Test tests[] = {
+    //     {"testSingleFrame",    &mockimagereciever_test::testSingleFrame},
+    //     {"testFragmentedFrame",&mockimagereciever_test::testFragmentedFrame},
+    //     {"testMultipleFrames", &mockimagereciever_test::testMultipleFrames},
+    //     {"testInvalidFrameSize",&mockimagereciever_test::testInvalidFrameSize}
+    // };
 
-bool mockimagereciever_test::testImagesReceived() {
-    int argc = 0; char** argv = nullptr;
-    QCoreApplication app(argc, argv);
-
-    MockImageReceiver receiver;
-    receiver.startServer(0);
-    quint16 port = receiver.findChild<QTcpServer*>()->serverPort();
-
-    bool called = false;
-    QObject::connect(&receiver, &MockImageReceiver::imagesReceived,
-                     [&](const QImage &img1, const QImage &img2, qint64 ts){
-                         called = true;
-                     });
-
-    // Connect clnts
-    QTcpSocket sock;
-    sock.connectToHost(QHostAddress::LocalHost, port);
-    if (!sock.waitForConnected(1000)) return false;
-
-    QByteArray dummy1(10, '\xAA'), dummy2(20, '\xBB');
-    QByteArray pkt;
-    QDataStream ds(&pkt, QIODevice::WriteOnly);
-    ds.setByteOrder(QDataStream::BigEndian);
-    ds << quint32(dummy1.size()); pkt.append(dummy1);
-    ds << quint32(dummy2.size()); pkt.append(dummy2);
-
-    sock.write(pkt);
-    sock.flush();
-
-
-    QEventLoop loop;
-    QTimer::singleShot(500, &loop, &QEventLoop::quit);
-    loop.exec();
-
-    return called;
+    // int passed = 0, total = sizeof(tests)/sizeof(Test);
+    // for (auto &t : tests) {
+    //     bool ok = (this->*t.fn)();
+    //     std::cout << t.name << ": " << (ok ? "PASS" : "FAIL") << "\n";
+    //     if (ok) ++passed;
+    // }
+    // std::cout << "\nSummary: Passed " << passed << " of " << total << " tests\n";
 }

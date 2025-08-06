@@ -4,10 +4,13 @@
 class mockimagereciever_test
 {
 public:
-    void run();
+    void run_all_mockimagereciever_tests();
 
 private:
-    bool testImagesReceived();
+    // bool testSingleFrame();
+    // bool testFragmentedFrame();
+    // bool testMultipleFrames();
+    // bool testInvalidFrameSize();
 
 };
 

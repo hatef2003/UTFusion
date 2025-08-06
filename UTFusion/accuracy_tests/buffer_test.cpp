@@ -7,7 +7,7 @@
 #include "globals.h"
 
 void buffer_test::run_all_buffer_tests() {
-    std::cout << "============ buffer_tests: ============" << std::endl;
+    std::cout << "=============== buffer_tests: ===============" << std::endl;
     struct Test { const char* name; bool (buffer_test::*fn)(); };
     Test tests[] = {
          {"testEmptyReadThrows",     &buffer_test::testEmptyReadThrows},

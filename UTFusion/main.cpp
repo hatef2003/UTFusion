@@ -13,6 +13,7 @@
 #include "accuracy_tests/buffer_test.h"
 #include <iostream>
 #include "accuracy_tests/testsforutfusion.h"
+#include "accuracy_tests/mockimagereciever_test.h"
 int main(int argc, char *argv[])
 {
      QCoreApplication app(argc, argv);
@@ -32,7 +33,10 @@ int main(int argc, char *argv[])
     buffer_test buffer_tester;
     buffer_tester.run_all_buffer_tests();
 
-     return app.exec();
+    mockimagereciever_test mockimagereciever_tester;
+    mockimagereciever_tester.run_all_mockimagereciever_tests();
+
+    return app.exec();
 }
 
 // int main(int argc, char *argv[])
