@@ -14,6 +14,7 @@
 #include <iostream>
 #include "accuracy_tests/testsforutfusion.h"
 #include "accuracy_tests/mockimagereciever_test.h"
+#include "accuracy_tests/datacontainer_tests.h"
 int main(int argc, char *argv[])
 {
      QCoreApplication app(argc, argv);
@@ -35,6 +36,9 @@ int main(int argc, char *argv[])
 
     mockimagereciever_test mockimagereciever_tester;
    // mockimagereciever_tester.run_all_mockimagereciever_tests();
+
+    datacontainer_tests datacontainer_tester;
+    datacontainer_tester.run_all_datacontainer_tests();
 
     return app.exec();
 }
