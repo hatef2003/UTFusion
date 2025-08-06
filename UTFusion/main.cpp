@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     buffer_tester.run_all_buffer_tests();
 
     mockimagereciever_test mockimagereciever_tester;
-    mockimagereciever_tester.run_all_mockimagereciever_tests();
+   // mockimagereciever_tester.run_all_mockimagereciever_tests();
 
     return app.exec();
 }

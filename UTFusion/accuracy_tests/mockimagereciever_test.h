@@ -1,17 +1,18 @@
 #ifndef MOCKIMAGERECIEVER_TEST_H
 #define MOCKIMAGERECIEVER_TEST_H
 
-class mockimagereciever_test
-{
+
+#include <QObject>
+
+class mockimagereciever_test : public QObject {
+    Q_OBJECT
 public:
     void run_all_mockimagereciever_tests();
 
-private:
-    // bool testSingleFrame();
-    // bool testFragmentedFrame();
-    // bool testMultipleFrames();
-    // bool testInvalidFrameSize();
-
+private slots:
+    bool testReceiveSingleFrame();
+    bool testReceiveFragmentedFrame();
+    bool testReceiveMultipleFrames();
+    bool testIgnoreIncompletePacket();
 };
-
 #endif // MOCKIMAGERECIEVER_TEST_H
