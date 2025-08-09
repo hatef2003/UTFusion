@@ -48,7 +48,6 @@ std::vector<Fusion::FusionOutput> Fusion::performFusion(const ObjectVector& obje
                 continue;
             else
                 is_pixel_seen[static_cast<int>(pixel.pixel_pos_y)][static_cast<int>(pixel.pixel_pos_x)] = true;
-            // qDebug() << "fuxk";
 
             float pixel_coords[2] = {pixel.pixel_pos_x, pixel.pixel_pos_y};
             float* world_pos = m_pixelToWorld.pixelToWorld(pixel_coords, pixel.pixel_depth);
