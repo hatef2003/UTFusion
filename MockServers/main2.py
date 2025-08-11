@@ -4,9 +4,8 @@ import time
 import json
 
 def generate_pixel_data():
-    # Generate a list of pixel data objects
     pixels = []
-    for _ in range(random.randint(5, 10)):  # random number of pixels per value
+    for _ in range(random.randint(5, 10)):  
         pixel = {
             "pixel_depth": round(random.uniform(0, 100), 2),
             "pixel_pos_x": round(random.uniform(0, 100), 2),
@@ -16,9 +15,8 @@ def generate_pixel_data():
     return pixels
 
 def generate_data():
-    # Generate a list of value objects, each with a 'pixels' array
     values = []
-    for _ in range(8):  # 8 value objects
+    for _ in range(8):  
         value = {
             "pixels": generate_pixel_data()
         }
@@ -41,7 +39,7 @@ if __name__ == "__main__":
                 payload = generate_data()
                 print("Sending payload:", payload)
                 s.sendall(json.dumps(payload).encode('utf-8'))
-                time.sleep(0.040)  # 20 milliseconds
+                time.sleep(0.040)  
     except KeyboardInterrupt:
         print("Stopped sending data.")
     except Exception as e:
