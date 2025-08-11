@@ -16,6 +16,7 @@
 #include "accuracy_tests/mockimagereciever_test.h"
 #include "accuracy_tests/datacontainer_tests.h"
 #include "accuracy_tests/fuse_test.h"
+#include "accuracy_tests/mockradardata_test.h"
 
 // int main(int argc, char *argv[])
 // {
@@ -45,6 +46,8 @@
 //     fuse_test fuse_tester;
 //     fuse_tester.run_all_fuse_tests();
 
+
+
 //     return app.exec();
 // }
 
@@ -53,7 +56,8 @@ int main(int argc, char *argv[])
     QCoreApplication app(argc, argv);
 
     //utFusionTests();
-
+    mockradardata_test mockradardata_tester;
+    mockradardata_tester.run();
 
     //std::cout << "hiiiii" << std::endl;
 
