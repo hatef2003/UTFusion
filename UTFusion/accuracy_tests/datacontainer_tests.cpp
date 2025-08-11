@@ -1,7 +1,7 @@
 #include "accuracy_tests/datacontainer_tests.h"
-#include "datacontainer.h"   // DataContainer declaration :contentReference[oaicite:2]{index=2}
-#include "buffer.h"          // Buffer::RadarData, CameraData :contentReference[oaicite:3]{index=3}
-#include "globals.h"         // TIMESTAMP_MAX_DRIFT
+#include "datacontainer.h"   
+#include "buffer.h"          
+#include "globals.h"         
 #include <iostream>
 #include <stdexcept>
 
@@ -31,14 +31,14 @@ bool datacontainer_tests::testGetDataBeforeAny() {
     try {
         dc.getData();
     } catch (const std::runtime_error&) {
-        return true;    // expected: no data available
+        return true;    
     }
-    return false;       // no exception ⇒ fail
+    return false;       
 }
 
 bool datacontainer_tests::testSyncAfterRadarThenCam() {
     DataContainer dc;
-    // Create radar and camera data within drift
+
     Buffer::RadarData  r{1000, 1,2,3,4,5,6};
     Buffer::CameraData c{nullptr, nullptr, 1000 + (TIMESTAMP_MAX_DRIFT/2)};
     dc.newRadarData(r);

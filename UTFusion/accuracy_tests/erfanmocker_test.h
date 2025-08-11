@@ -7,7 +7,7 @@
 #include <QHostAddress>
 #include <QObject>
 
-#include "erfanmocker.h"   // includes Fusion::PixelData and Buffer::RadarData
+#include "erfanmocker.h"   
 
 class erfanmocker_test {
 public:

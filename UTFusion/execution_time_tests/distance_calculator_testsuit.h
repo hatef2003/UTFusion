@@ -19,4 +19,4 @@ public:
     QStringList run_suit();
 };
 
-#endif // DISTANCE_CALCULATOR_TESTSUIT_H
+#endif 

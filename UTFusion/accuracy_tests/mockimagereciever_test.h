@@ -13,4 +13,4 @@ private slots:
 
     bool testIgnoreIncompletePacket();
 };
-#endif // MOCKIMAGERECIEVER_TEST_H
+#endif 

@@ -34,9 +34,9 @@ bool buffer_test::testEmptyReadThrows() {
     try {
         buf.read();
     } catch (const std::runtime_error&) {
-        return true;   // expected
+        return true;   
     }
-    return false;      // no exception
+    return false;      
 }
 
 
@@ -54,7 +54,7 @@ bool buffer_test::testAddAndReadSync() {
            && pr.second.timestamp == c.timestamp;
 }
 
-bool buffer_test::testNotSyncBeyondDrift() { //check if rdr & cam drift more than TIMESTAMP_MAX_DRIFT
+bool buffer_test::testNotSyncBeyondDrift() { 
     Buffer buf;
     Buffer::RadarData  r{2000,0,0,0,0,0,0};
     Buffer::CameraData c{nullptr,nullptr,2000 + TIMESTAMP_MAX_DRIFT + 1};

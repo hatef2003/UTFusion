@@ -4,7 +4,7 @@
 class datacontainer_tests
 {
 public:
-    // Run all DataContainer tests and print a summary
+    
     void run_all_datacontainer_tests();
 
 private:
@@ -13,4 +13,4 @@ private:
     bool testSyncAfterCamThenRadar();
 };
 
-#endif // DATACONTAINER_TESTS_H
+#endif 

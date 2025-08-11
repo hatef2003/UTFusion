@@ -4,7 +4,7 @@
 class buffer_test
 {
 public:
-    // Runs all tests and prints a summary
+    
     void run_all_buffer_tests();
 
 private:
@@ -17,4 +17,4 @@ private:
 
 
 
-#endif // BUFFER_TEST_H
+#endif 

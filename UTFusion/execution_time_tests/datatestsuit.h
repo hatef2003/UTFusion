@@ -19,4 +19,4 @@ public:
     QStringList run_suit();
 };
 
-#endif // DATATESTSUIT_H
+#endif 

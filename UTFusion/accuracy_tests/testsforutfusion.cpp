@@ -22,7 +22,6 @@ void utFusionTests() {
 
     std::cout << "--- Application Startup Tests ---" << std::endl;
 
-    // Application components startup
     {
         DataContainer dc;
         MockRadarData    radar;
