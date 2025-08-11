@@ -16,39 +16,47 @@
 #include "accuracy_tests/mockimagereciever_test.h"
 #include "accuracy_tests/datacontainer_tests.h"
 #include "accuracy_tests/fuse_test.h"
-#include "accuracy_tests/mockradardata_test.h"
-#include "accuracy_tests/erfanmocker_test.h"
+
+// int main(int argc, char *argv[])
+// {
+//     QCoreApplication app(argc, argv);
+
+//     FusionTestSuit t_fuse;
+//     t_fuse.run_suit();
+//     distanceCalculatorTestsuit t_calc;
+//     t_calc.run_suit();
+//     Pixel2WorldTestsuit t_p2w;
+//     t_p2w.run_suit();
+//     DataTestsuit t_data;
+//     t_data.run_suit();
+//     // // benchmark("dummy test", fusion_test_simple, 5);
+
+
+
+//     buffer_test buffer_tester;
+//     buffer_tester.run_all_buffer_tests();
+
+//     mockimagereciever_test mockimagereciever_tester;
+//    // mockimagereciever_tester.run_all_mockimagereciever_tests();
+
+//     datacontainer_tests datacontainer_tester;
+//     datacontainer_tester.run_all_datacontainer_tests();
+
+//     fuse_test fuse_tester;
+//     fuse_tester.run_all_fuse_tests();
+
+//     return app.exec();
+// }
 
 int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
-    mockradardata_test mockradardata_tester;
-    mockradardata_tester.run();
-
-    erfanmocker_test erfanmocker_tester;
-    erfanmocker_tester.run();
-
-
-        buffer_test buffer_tester;
-        buffer_tester.run_all_buffer_tests();
-
-        mockimagereciever_test mockimagereciever_tester;
-        mockimagereciever_tester.run_all_mockimagereciever_tests();
-
-        datacontainer_tests datacontainer_tester;
-        datacontainer_tester.run_all_datacontainer_tests();
-
-        fuse_test fuse_tester;
-        fuse_tester.run_all_fuse_tests();
-
-
-
     DataContainer dataContainer;
     MockRadarData radar;
     MockImageReceiver mockImageReceiver;
-    mockImageReceiver.startServer(8080); 
-    radar.startServer(8000);             
+    mockImageReceiver.startServer(8080);
+    radar.startServer(8000);
     
     QObject::connect(&radar,
                      &MockRadarData::dataReceived,
@@ -73,10 +81,9 @@ int main(int argc, char *argv[])
                          dataContainer.newCamData(cameraData);
                      });
     ErfanMocker erfanMocker;
-    erfanMocker.startServer(8001); 
+    erfanMocker.startServer(8001);
     Fuse fuse;
     QObject::connect(&erfanMocker, &ErfanMocker::dataReceived, &fuse, &Fuse::dataRecieve);
 
     return app.exec();
 }
-
