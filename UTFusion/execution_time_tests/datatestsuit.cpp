@@ -1,5 +1,6 @@
 #include "datatestsuit.h"
 #include <QImage>
+#include <iostream>
 
 DataTestsuit::DataTestsuit() {}
 
@@ -74,7 +75,7 @@ QStringList DataTestsuit::run_suit()
     }, 1);
 
     for (const QString& line : results) {
-        qDebug() << line;
+        std::cout << line.toStdString() << std::endl;
     }
 
     return results;

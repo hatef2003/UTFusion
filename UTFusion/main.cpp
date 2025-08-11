@@ -1,7 +1,7 @@
 #include <QCoreApplication>
 #include <QImage>
-#include "MockImageReceiver.h"
-#include "MockRadarData.h"
+#include "mockimagereceiver.h"
+#include "mockradardata.h"
 #include "datacontainer.h"
 #include "erfanmocker.h"
 #include<fuse.h>

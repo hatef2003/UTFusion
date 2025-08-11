@@ -1,4 +1,4 @@
-#include "MockImageReceiver.h"
+#include "mockimagereceiver.h"
 #include "qdatetime.h"
 #include <QDataStream>
 #include<QTime>

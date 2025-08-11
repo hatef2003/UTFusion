@@ -1,4 +1,5 @@
 #include "pixel2worldtestsuit.h"
+#include <iostream>
 
 #define CAM_FX 1146.3511547076373
 #define CAM_FY 1096.8692812423094
@@ -80,7 +81,7 @@ QStringList Pixel2WorldTestsuit::run_suit()
     }, 5);
 
     for (const QString& line : results) {
-        qDebug() << line;
+        std::cout << line.toStdString() << std::endl;
     }
 
     return results;

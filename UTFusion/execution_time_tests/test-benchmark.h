@@ -14,11 +14,18 @@ inline size_t getMemoryUsageBytes() {
     return pmc.WorkingSetSize;
 }
 #elif defined(Q_OS_UNIX)
-#include <sys/resource.h>
+#include <unistd.h>
+#include <fstream>
+#include <string>
+
 inline size_t getMemoryUsageBytes() {
-    struct rusage usage;
-    getrusage(RUSAGE_SELF, &usage);
-    return static_cast<size_t>(usage.ru_maxrss * 1024);
+    long rss = 0L;
+    std::ifstream statm("/proc/self/statm");
+    long total_pages = 0;
+    if (statm >> total_pages >> rss) {
+        return static_cast<size_t>(rss) * sysconf(_SC_PAGESIZE);
+    }
+    return 0;
 }
 #else
 inline size_t getMemoryUsageBytes() {
