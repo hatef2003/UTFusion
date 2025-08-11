@@ -35,10 +35,7 @@ public:
         CameraPose(float pos[3], float rot[3]);
         void updateRotationMatrix();
 
-        /**
-         * @brief Create rotation matrix from Euler angles (roll, pitch, yaw)
-         * Convention: R = R_z(yaw) * R_y(pitch) * R_x(roll)
-         */
+
         Matrix4x4 eulerToRotationMatrix(float roll, float pitch, float yaw);
 
     };
@@ -54,18 +51,9 @@ public:
     void setCameraIntrinsics(const CameraIntrinsics& intrinsics);
     void setCameraPose(const CameraPose& pose);
 
-    /**
-     * @brief Convert pixel to world coordinates (undistorted image)
-     *
-     * @param pixel Pixel coordinates (u, v) in undistorted image
-     * @param depth Depth value at the pixel (must be > 0)
-     * @return 3D point in world coordinates
-     */
     float* pixelToWorld(float pixel[2], float depth) const;
 
-    /**
-     * @brief Convert pixel to world coordinates (static version)
-     */
+
     static float* pixelToWorld(const float pixel[2], float depth,
                                   const CameraIntrinsics& intrinsics,
                                   const CameraPose& pose);
@@ -74,4 +62,4 @@ public:
 
 };
 
-#endif // PIXELTOWORLD_H
+#endif 

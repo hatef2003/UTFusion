@@ -29,4 +29,4 @@ private:
     QTcpSocket *clientSocket;
 };
 
-#endif // erfanmocker_H
+#endif 

@@ -57,4 +57,4 @@ QStringList benchmark(const QString& name, Func func, int repeat = 1) {
     return results;
 }
 
-#endif // BENCHMARK_UTILS_H
+#endif 

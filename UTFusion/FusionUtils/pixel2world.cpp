@@ -37,7 +37,6 @@ void PixelToWorld::setCameraPose(const CameraPose& pose)
 float* PixelToWorld::pixelToWorld(float pixel[2], float depth) const
 {
     if (!m_intrinsicsSet || !m_poseSet) {
-        // qWarning() << "Camera intrinsics or pose not set";
         return NULL;
     }
 
@@ -49,7 +48,6 @@ float* PixelToWorld::pixelToWorld(const float pixel[2], float depth,
                                      const CameraPose& pose)
 {
     if (!isValidDepth(depth)) {
-        // qWarning() << "Invalid depth value:" << depth;
         return NULL;
     }
 
@@ -59,7 +57,6 @@ float* PixelToWorld::pixelToWorld(const float pixel[2], float depth,
     float point_cam[3] = {x_norm * depth, y_norm * depth, depth};
 
 
-    // map according to QT, yeah i read the fucking library
     float point_world[3];
     point_world[0] = pose.rotationMatrix.m[0][0] * point_cam[0] +
                         pose.rotationMatrix.m[0][1] * point_cam[1] +
@@ -84,7 +81,6 @@ float* PixelToWorld::pixelToWorld(const float pixel[2], float depth,
     point_world[0] += pose.position[0];
     point_world[1] += pose.position[1];
     point_world[2] += pose.position[2];
-    //  = pose.rotationMatrix.map(point_cam) + pose.position;
 
     return point_world;
 }
@@ -97,26 +93,22 @@ PixelToWorld::Matrix4x4 PixelToWorld::CameraPose::eulerToRotationMatrix(float ro
 
     Matrix4x4 rotMatrix;
 
-    // Combined rotation: R = R_z(yaw) * R_y(pitch) * R_x(roll)
-    // Row 0
+
     rotMatrix.m[0][0] = cy * cz;
     rotMatrix.m[0][1] = -cy * sz;
     rotMatrix.m[0][2] = sy;
     rotMatrix.m[0][3] = 0.0f;
 
-    // Row 1
     rotMatrix.m[1][0] = sx * sy * cz + cx * sz;
     rotMatrix.m[1][1] = -sx * sy * sz + cx * cz;
     rotMatrix.m[1][2] = -sx * cy;
     rotMatrix.m[1][3] = 0.0f;
 
-    // Row 2
     rotMatrix.m[2][0] = -cx * sy * cz + sx * sz;
     rotMatrix.m[2][1] = cx * sy * sz + sx * cz;
     rotMatrix.m[2][2] = cx * cy;
     rotMatrix.m[2][3] = 0.0f;
 
-    // Row 3
     rotMatrix.m[3][0] = 0.0f;
     rotMatrix.m[3][1] = 0.0f;
     rotMatrix.m[3][2] = 0.0f;

@@ -19,33 +19,10 @@
 #include "accuracy_tests/mockradardata_test.h"
 #include "accuracy_tests/erfanmocker_test.h"
 
-// int main(int argc, char *argv[])
-// {
-//     QCoreApplication app(argc, argv);
-
-//     FusionTestSuit t_fuse;
-//     t_fuse.run_suit();
-//     distanceCalculatorTestsuit t_calc;
-//     t_calc.run_suit();
-//     Pixel2WorldTestsuit t_p2w;
-//     t_p2w.run_suit();
-//     DataTestsuit t_data;
-//     t_data.run_suit();
-//     // // benchmark("dummy test", fusion_test_simple, 5);
-
-
-
-
-
-
-//     return app.exec();
-// }
-
 int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
-    //utFusionTests();
     mockradardata_test mockradardata_tester;
     mockradardata_tester.run();
 
@@ -66,13 +43,12 @@ int main(int argc, char *argv[])
         fuse_tester.run_all_fuse_tests();
 
 
-    //std::cout << "hiiiii" << std::endl;
 
     DataContainer dataContainer;
     MockRadarData radar;
     MockImageReceiver mockImageReceiver;
-    mockImageReceiver.startServer(8080); // Start server on port 8080
-    radar.startServer(8000);             // Start server on port 8000
+    mockImageReceiver.startServer(8080); 
+    radar.startServer(8000);             
     
     QObject::connect(&radar,
                      &MockRadarData::dataReceived,
@@ -97,7 +73,7 @@ int main(int argc, char *argv[])
                          dataContainer.newCamData(cameraData);
                      });
     ErfanMocker erfanMocker;
-    erfanMocker.startServer(8001); // Start server on port 8001
+    erfanMocker.startServer(8001); 
     Fuse fuse;
     QObject::connect(&erfanMocker, &ErfanMocker::dataReceived, &fuse, &Fuse::dataRecieve);
 

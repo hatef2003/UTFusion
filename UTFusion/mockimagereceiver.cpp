@@ -24,7 +24,7 @@ void MockImageReceiver::onReadyRead()
 {
     buffer.append(clientSocket->readAll());
 
-    // Protocol: [4 bytes img1 size][img1][4 bytes img2 size][img2]
+    
     while (buffer.size() >= 8) {
         QDataStream stream(buffer);
         stream.setByteOrder(QDataStream::BigEndian);
@@ -33,7 +33,7 @@ void MockImageReceiver::onReadyRead()
         stream >> img1Size;
 
         if (buffer.size() < 4 + img1Size + 4)
-            return; // Wait for more data
+            return; 
 
         QByteArray img1Data = buffer.mid(4, img1Size);
 
@@ -41,7 +41,7 @@ void MockImageReceiver::onReadyRead()
         stream >> img2Size;
 
         if (buffer.size() < 4 + img1Size + 4 + img2Size)
-            return; // Wait for more data
+            return; 
 
         QByteArray img2Data = buffer.mid(4 + img1Size + 4, img2Size);
 
@@ -49,10 +49,9 @@ void MockImageReceiver::onReadyRead()
         img1.loadFromData(img1Data);
         img2.loadFromData(img2Data);
 
-        //s
         qint64 timestamp = QDateTime::currentMSecsSinceEpoch();
-        emit imagesReceived(img1, img2, timestamp);  //gave timestamp as input, too
-        //original version: emit imagesReceived(img1, img2)
+        emit imagesReceived(img1, img2, timestamp);  
+        
 
         buffer.remove(0, 4 + img1Size + 4 + img2Size);
     }

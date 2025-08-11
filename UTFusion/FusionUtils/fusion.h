@@ -60,29 +60,14 @@ public:
     void setRadars(const std::vector<RadarData>& radars);
     void setEpsilon(float epsilon);
     
-    /**
-     * @brief Perform fusion of camera objects with radar data
-     * @param objects Vector of objects, where each object is a vector of PixelData
-     * @return Vector of fusion results, one per radar
-     */
     std::vector<FusionOutput> performFusion(const ObjectVector& objects);
     
 private:
-    /**
-     * @brief Find the closest radar(s) to a given world x-coordinate
-     * @param world_x The x-coordinate in world space
-     * @return Index of the closest radar
-     */
+
     int findClosestRadar(float world_x);
     
-    /**
-     * @brief Find radar indices that bracket the given x-coordinate
-     * @param world_x The x-coordinate in world space
-     * @param left_radar Index of left radar (output)
-     * @param right_radar Index of right radar (output)
-     * @return true if bracketing radars found, false if outside range
-     */
+
     bool findBracketingRadars(float world_x, int& left_radar, int& right_radar);
 };
 
-#endif // FUSION_H
+#endif 
