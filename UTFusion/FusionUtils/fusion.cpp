@@ -21,7 +21,7 @@ void Fusion::setCameraPose(const PixelToWorld::CameraPose& pose)
     m_pixelToWorld.setCameraPose(pose);
 }
 
-void Fusion::setRadars(const std::vector<RadarData>& radars)    // Nlog^2(N)
+void Fusion::setRadars(const std::vector<RadarData>& radars)    
 {
     m_radars = radars;
     std::stable_sort(m_radars.begin(), m_radars.end(),
@@ -41,7 +41,7 @@ std::vector<Fusion::FusionOutput> Fusion::performFusion(const ObjectVector& obje
     bool is_pixel_seen[IMG_HEIGHT][IMG_WIDTH];
     std::fill(&is_pixel_seen[0][0], &is_pixel_seen[0][0] + sizeof(is_pixel_seen) / sizeof(bool), false); // O(Nimglen)
 
-    for (const auto& object : objects) { // O(Nimglen* (O(pixel2World) + 2Nradarlen + Nradarlen*O(logNfloatlen)))
+    for (const auto& object : objects) { 
         for (const auto& pixel : object) {
 
             if (is_pixel_seen[static_cast<int>(pixel.pixel_pos_y)][static_cast<int>(pixel.pixel_pos_x)])
@@ -95,7 +95,7 @@ std::vector<Fusion::FusionOutput> Fusion::performFusion(const ObjectVector& obje
     return output;
 }
 
-int Fusion::findClosestRadar(float world_x) // O(N)
+int Fusion::findClosestRadar(float world_x) 
 {
     if (m_radars.empty()) return -1;
     

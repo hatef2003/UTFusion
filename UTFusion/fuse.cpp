@@ -30,7 +30,6 @@ void Fuse::dataRecieve(const std::vector<std::vector<Fusion::PixelData> > &value
                        Buffer::RadarData r)
 {
     mu->lock();
-    // TODO Hashem
     unsafeSetRadars(r);
     m_fusion->setRadars(m_radars);
     std::vector<Fusion::FusionOutput> result;

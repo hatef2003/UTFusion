@@ -44,4 +44,4 @@ private:
     std::array<CameraData, MAX_DATA> m_camArray;
 };
 
-#endif // BUFFER_H
+#endif 

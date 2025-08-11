@@ -14,7 +14,6 @@ public:
     void startServer(quint16 port = 8080);
 
 signals:
-    //s:
     void imagesReceived(const QImage &img1, const QImage &img2,qint64 timestamp );
 
 private slots:
@@ -27,4 +26,4 @@ private:
     QByteArray buffer;
 };
 
-#endif // MOCKIMAGERECEIVER_H
+#endif 

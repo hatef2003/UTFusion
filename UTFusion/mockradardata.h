@@ -27,4 +27,4 @@ private:
     QTcpSocket *clientSocket;
 };
 
-#endif // MOCKRADARDATA_H
+#endif 

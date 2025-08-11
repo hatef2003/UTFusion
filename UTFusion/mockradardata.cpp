@@ -1,5 +1,5 @@
 #include "mockradardata.h"
-#include <QJsonArray> // Add this include
+#include <QJsonArray> 
 MockRadarData::MockRadarData(QObject *parent)
     : QObject(parent), server(new QTcpServer(this)), clientSocket(nullptr)
 {
@@ -27,18 +27,10 @@ void MockRadarData::onReadyRead()
         for (const QJsonValue &val : obj["values"].toArray())
             values.append(val.toInt());
 
-        //s: in here, we R getting info from Json:
-        // replace with this to get info from sensor: //cam - Radar
-        // uncomment if you want to get info from sensors not mock:
-
-        //s version: qint64 timestamp = QDateTime::currentMSecsSinceEpoch();
+        
         qint64 timestamp = obj["timestamp"].toVariant().toLongLong();
 
-        //option2:
-        //     qint64 timestamp = obj.contains("timestamp")
-        // ? obj["timestamp"].toVariant().toLongLong()
-        // : QDateTime::currentMSecsSinceEpoch();
-
+        
        
         emit dataReceived(values, timestamp);
     }

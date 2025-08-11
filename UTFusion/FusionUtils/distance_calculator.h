@@ -1,7 +1,7 @@
 #ifndef DISTANCECALCULATOR_H
 #define DISTANCECALCULATOR_H
 
-// static class for calculations
+
 class DistanceCalculator
 {
 public:
@@ -13,4 +13,4 @@ public:
     static float calculateDistance(float p1[3], float p2[3]);
 };
 
-#endif // DISTANCECALCULATOR_H
+#endif 

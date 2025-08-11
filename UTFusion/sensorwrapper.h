@@ -12,4 +12,4 @@ public:
 signals:
 };
 
-#endif // SENSORWRAPPER_H
+#endif 
