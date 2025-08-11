@@ -3,10 +3,27 @@
 
 int mockradardata_test :: run() {
     int fails = 0;
-    std::cout << "=== MockRadarDataTest (simple) ===" << std::endl;
-    if (!test_singleMessage())    { std::cout << "[FAIL] singleMessage\n";    fails++; } else std::cout << "[PASS] singleMessage" << std::endl;
-    if (!test_missingTimestamp()) { std::cout << "[FAIL] missingTimestamp\n"; fails++; } else std::cout << "[PASS] missingTimestamp" << std::endl;
-    std::cout << "=== Done. Failures: " << fails << " ===" << std::endl;
+    struct Test { const char* name; bool (mockradardata_test::*fn)(); };
+    Test tests[] = {
+        {"testSingleMessage",     &mockradardata_test::test_singleMessage},
+        {"testMissingTimestamp",&mockradardata_test::test_missingTimestamp}
+    };
+    std::cout << " " << std::endl;
+    std::cout << "========= MockRadarDataTest =========" << std::endl;
+
+    if (!test_singleMessage())    { std::cout << "singleMessage: FAIL\n";    fails++; } else std::cout << "singleMessage: PASS" << std::endl;
+    if (!test_missingTimestamp()) { std::cout << "missingTimestamp:  FAIL\n"; fails++; } else std::cout << "missingTimestamp: PASS" << std::endl;
+
+    int passed = 0;
+    int total  = sizeof(tests)/sizeof(tests[0]);
+    for (auto &t : tests) {
+        bool ok = (this->*t.fn)();
+        std::cout << t.name << ": " << (ok ? "PASS" : "FAIL") << std::endl;
+        if (ok) ++passed;
+    }
+    std::cout << " " << std::endl;
+    std::cout << "Summary: Passed " << passed << " of " << total << " tests" << std::endl;
+
     return fails;
 }
 
