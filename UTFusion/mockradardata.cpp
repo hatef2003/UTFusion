@@ -1,4 +1,4 @@
-#include "MockRadarData.h"
+#include "mockradardata.h"
 #include <QJsonArray> // Add this include
 MockRadarData::MockRadarData(QObject *parent)
     : QObject(parent), server(new QTcpServer(this)), clientSocket(nullptr)

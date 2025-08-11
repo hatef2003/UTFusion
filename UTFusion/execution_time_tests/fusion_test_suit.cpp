@@ -1,4 +1,5 @@
 #include "fusion_test_suit.h"
+#include <iostream>
 
 FusionTestSuit::FusionTestSuit() {}
 
@@ -58,7 +59,7 @@ QStringList FusionTestSuit::run_suit()
     }, 5);
 
     for (const QString& line : results) {
-        qDebug() << line;
+        std::cout << line.toStdString() << std::endl;
     }
 
     return results;

@@ -10,8 +10,8 @@
 #include "globals.h"
 #include "buffer.h"
 #include "datacontainer.h"
-#include "MockImageReceiver.h"
-#include "MockRadarData.h"
+#include "mockimagereceiver.h"
+#include "mockradardata.h"
 #include "erfanmocker.h"
 #include "fuse.h"
 

@@ -1,4 +1,5 @@
 #include "distance_calculator_testsuit.h"
+#include <iostream>
 
 distanceCalculatorTestsuit::distanceCalculatorTestsuit() {}
 
@@ -51,7 +52,7 @@ QStringList distanceCalculatorTestsuit::run_suit()
     }, 5);
 
     for (const QString& line : results) {
-        qDebug() << line;
+        std::cout << line.toStdString() << std::endl;
     }
 
     return results;
