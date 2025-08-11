@@ -17,7 +17,7 @@
 #include "accuracy_tests/datacontainer_tests.h"
 #include "accuracy_tests/fuse_test.h"
 #include "accuracy_tests/mockradardata_test.h"
-#include "accuracy_tests/erfanmocker_test.cpp"
+#include "accuracy_tests/erfanmocker_test.h"
 
 // int main(int argc, char *argv[])
 // {
