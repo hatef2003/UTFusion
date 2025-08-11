@@ -106,3 +106,82 @@ Incomplete Fusion Implementation: Clarify relationship between Fuse and Fusion c
 Error Handling: Improve TCP server handling for disconnections and malformed data.
 
 Configuration: Replace hardcoded server ports with configurable options (command-line or config file).
+
+
+---
+
+## Accuracy Tests
+
+Our project includes a comprehensive suite of unit and integration tests to verify the correctness, robustness, and synchronization of different system components. Below is a summary of the main test modules:
+
+### 1. **MockRadarData Tests** (`mockradardata_test.cpp`)
+
+* **Purpose:** Validate receiving and parsing of radar data over TCP.
+* **Key Tests:**
+
+  * `testSingleMessage`: Ensures a complete radar message (values + timestamp) is correctly received and parsed.
+  * `testMissingTimestamp`: Verifies correct behavior when a timestamp is missing (defaults to `0`).
+* **Focus:** Network communication, data integrity, and timestamp handling.
+
+---
+
+### 2. **Buffer Tests** (`buffer_test.cpp`)
+
+* **Purpose:** Check buffer operations for synchronized radar and camera data.
+* ** Tests:**
+
+  * `testEmptyReadThrows`: Ensures reading from an empty buffer throws an exception.
+  * `testAddAndReadSync`: Verifies correct synchronization when radar and camera timestamps are within the allowed drift.
+  * `testNotSyncBeyondDrift`: Confirms data is considered unsynchronized when timestamps exceed the drift limit.
+* **Focus:** Data synchronization, exception handling.
+
+---
+
+### 3. **DataContainer Tests** (`datacontainer_tests.cpp`)
+
+* **Purpose:** Validate data storage, retrieval, and synchronization in the `DataContainer`.
+* **Tests:**
+
+  * `testGetDataBeforeAny`: Ensures exceptions are thrown when no data is available.
+  * `testSyncAfterRadarThenCam`: Validates correct synchronization when radar data arrives first.
+  * `testSyncAfterCamThenRadar`: Validates correct synchronization when camera data arrives first.
+* **Focus:** Data ordering, synchronization logic, error handling.
+
+---
+
+### 4. **Fuse Tests** (`fuse_test.cpp`)
+
+* **Purpose:** Ensure the fusion module emits events correctly when processing data.
+* **Tests:**
+
+  * `testOperationDoneOnce`: Checks that `OperationDone` is emitted exactly once per data set.
+  * `testOperationDoneTwice`: Ensures multiple emissions occur for multiple inputs.
+* **Focus:** Event emission correctness.
+
+---
+
+### 5. **MockImageReceiver Tests** (`mockimagereciever_test.cpp`)
+
+* **Purpose:** Validate image receiving logic over TCP.
+* **Tests:**
+
+  * `testIgnoreIncompletePacket`: Ensures incomplete packets are ignored and no false data reception is reported.
+* **Focus:** Network robustness, packet validation.
+
+---
+
+### 6. **ErfanMocker Tests** (`erfanmocker_test.cpp`)
+
+* **Purpose:** Test a mock radar & pixel data generator for the fusion pipeline.
+* **Tests:**
+
+  * `test_singleValidMessage`: Validates processing of a full, valid message.
+  * `test_missingTimestamp`: Checks correct handling when timestamp is missing.
+  * `test_emptyPixelsAllowed`: Verifies that empty pixel arrays are processed without errors.
+* **Focus:** Input validation, handling of edge cases.
+
+--
+
+
+
+
