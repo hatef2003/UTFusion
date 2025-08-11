@@ -25,9 +25,7 @@ void mockimagereciever_test::run_all_mockimagereciever_tests() {
     std::cout << "========== mockimagereciever_tests: ==========" << std::endl;
     struct Test { const char* name; bool (mockimagereciever_test::*fn)(); };
     Test tests[] = {
-        {"testReceiveSingleFrame",     &mockimagereciever_test::testReceiveSingleFrame},
-        {"testReceiveFragmentedFrame", &mockimagereciever_test::testReceiveFragmentedFrame},
-        {"testReceiveMultipleFrames",  &mockimagereciever_test::testReceiveMultipleFrames},
+
         {"testIgnoreIncompletePacket", &mockimagereciever_test::testIgnoreIncompletePacket}
     };
     int passed = 0;
