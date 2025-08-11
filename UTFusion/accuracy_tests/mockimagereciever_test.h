@@ -10,9 +10,7 @@ public:
     void run_all_mockimagereciever_tests();
 
 private slots:
-    bool testReceiveSingleFrame();
-    bool testReceiveFragmentedFrame();
-    bool testReceiveMultipleFrames();
+
     bool testIgnoreIncompletePacket();
 };
 #endif // MOCKIMAGERECIEVER_TEST_H

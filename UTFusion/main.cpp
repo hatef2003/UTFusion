@@ -17,6 +17,7 @@
 #include "accuracy_tests/datacontainer_tests.h"
 #include "accuracy_tests/fuse_test.h"
 #include "accuracy_tests/mockradardata_test.h"
+#include "accuracy_tests/erfanmocker_test.cpp"
 
 // int main(int argc, char *argv[])
 // {
@@ -34,17 +35,6 @@
 
 
 
-//     buffer_test buffer_tester;
-//     buffer_tester.run_all_buffer_tests();
-
-//     mockimagereciever_test mockimagereciever_tester;
-//    // mockimagereciever_tester.run_all_mockimagereciever_tests();
-
-//     datacontainer_tests datacontainer_tester;
-//     datacontainer_tester.run_all_datacontainer_tests();
-
-//     fuse_test fuse_tester;
-//     fuse_tester.run_all_fuse_tests();
 
 
 
@@ -58,6 +48,23 @@ int main(int argc, char *argv[])
     //utFusionTests();
     mockradardata_test mockradardata_tester;
     mockradardata_tester.run();
+
+    erfanmocker_test erfanmocker_tester;
+    erfanmocker_tester.run();
+
+
+        buffer_test buffer_tester;
+        buffer_tester.run_all_buffer_tests();
+
+        mockimagereciever_test mockimagereciever_tester;
+        mockimagereciever_tester.run_all_mockimagereciever_tests();
+
+        datacontainer_tests datacontainer_tester;
+        datacontainer_tester.run_all_datacontainer_tests();
+
+        fuse_test fuse_tester;
+        fuse_tester.run_all_fuse_tests();
+
 
     //std::cout << "hiiiii" << std::endl;
 
