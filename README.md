@@ -117,7 +117,7 @@ Our project includes a comprehensive suite of unit and integration tests to veri
 ### 1. **MockRadarData Tests** (`mockradardata_test.cpp`)
 
 * **Purpose:** Validate receiving and parsing of radar data over TCP.
-* **Key Tests:**
+* **Tests:**
 
   * `testSingleMessage`: Ensures a complete radar message (values + timestamp) is correctly received and parsed.
   * `testMissingTimestamp`: Verifies correct behavior when a timestamp is missing (defaults to `0`).
@@ -128,7 +128,7 @@ Our project includes a comprehensive suite of unit and integration tests to veri
 ### 2. **Buffer Tests** (`buffer_test.cpp`)
 
 * **Purpose:** Check buffer operations for synchronized radar and camera data.
-* ** Tests:**
+* **Tests:**
 
   * `testEmptyReadThrows`: Ensures reading from an empty buffer throws an exception.
   * `testAddAndReadSync`: Verifies correct synchronization when radar and camera timestamps are within the allowed drift.
@@ -173,7 +173,7 @@ Our project includes a comprehensive suite of unit and integration tests to veri
   * `test_emptyPixelsAllowed`: Verifies that empty pixel arrays are processed without errors.
 * **Focus:** Input validation, handling of edge cases.
 
---
+---
 
 
 
