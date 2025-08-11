@@ -15,6 +15,8 @@
 #include "accuracy_tests/testsforutfusion.h"
 #include "accuracy_tests/mockimagereciever_test.h"
 #include "accuracy_tests/datacontainer_tests.h"
+#include "accuracy_tests/fuse_test.h"
+
 int main(int argc, char *argv[])
 {
      QCoreApplication app(argc, argv);
@@ -39,6 +41,9 @@ int main(int argc, char *argv[])
 
     datacontainer_tests datacontainer_tester;
     datacontainer_tester.run_all_datacontainer_tests();
+
+    fuse_test fuse_tester;
+    fuse_tester.run_all_fuse_tests();
 
     return app.exec();
 }

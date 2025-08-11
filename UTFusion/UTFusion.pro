@@ -22,6 +22,7 @@ SOURCES += \
         FusionUtils/pixel2world.cpp \
         accuracy_tests/buffer_test.cpp \
         accuracy_tests/datacontainer_tests.cpp \
+        accuracy_tests/fuse_test.cpp \
         accuracy_tests/mockimagereciever_test.cpp \
         buffer.cpp \
         datacontainer.cpp \
@@ -50,6 +51,7 @@ HEADERS += \
     FusionUtils/pixel2world.h \
     accuracy_tests/buffer_test.h \
     accuracy_tests/datacontainer_tests.h \
+    accuracy_tests/fuse_test.h \
     accuracy_tests/mockimagereciever_test.h \
     buffer.h \
     datacontainer.h \
