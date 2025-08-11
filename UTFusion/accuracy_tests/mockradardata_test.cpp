@@ -8,11 +8,10 @@ int mockradardata_test :: run() {
         {"testSingleMessage",     &mockradardata_test::test_singleMessage},
         {"testMissingTimestamp",&mockradardata_test::test_missingTimestamp}
     };
+
     std::cout << " " << std::endl;
     std::cout << "========= MockRadarDataTest =========" << std::endl;
 
-    if (!test_singleMessage())    { std::cout << "singleMessage: FAIL\n";    fails++; } else std::cout << "singleMessage: PASS" << std::endl;
-    if (!test_missingTimestamp()) { std::cout << "missingTimestamp:  FAIL\n"; fails++; } else std::cout << "missingTimestamp: PASS" << std::endl;
 
     int passed = 0;
     int total  = sizeof(tests)/sizeof(tests[0]);

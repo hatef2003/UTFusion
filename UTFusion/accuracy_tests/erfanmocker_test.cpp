@@ -24,11 +24,28 @@
 
 int erfanmocker_test::run() {
     int fails = 0;
-    std::cout << "=== ErfanMockerTest (simple) ===" << std::endl;
-    if (!test_singleValidMessage())    { std::cout << "[FAIL] singleValidMessage\n";    fails++; } else std::cout << "[PASS] singleValidMessage" << std::endl;
-    if (!test_missingTimestamp())      { std::cout << "[FAIL] missingTimestamp\n";      fails++; } else std::cout << "[PASS] missingTimestamp" << std::endl;
-    if (!test_emptyPixelsAllowed())    { std::cout << "[FAIL] emptyPixelsAllowed\n";    fails++; } else std::cout << "[PASS] emptyPixelsAllowed" << std::endl;
-    std::cout << "=== Done. Failures: " << fails << " ===" << std::endl;
+
+
+    struct Test { const char* name; bool (erfanmocker_test::*fn)(); };
+    Test tests[] = {
+        {"testSingleMessage",     &erfanmocker_test::test_singleValidMessage},
+        {"testMissingTimestamp",&erfanmocker_test::test_missingTimestamp},
+        {"testMissingTimestamp",&erfanmocker_test::test_emptyPixelsAllowed}
+    };
+    std::cout << " " << std::endl;
+    std::cout << "========= ErfanMockerTest =========" << std::endl;
+
+
+    int passed = 0;
+    int total  = sizeof(tests)/sizeof(tests[0]);
+    for (auto &t : tests) {
+        bool ok = (this->*t.fn)();
+        std::cout << t.name << ": " << (ok ? "PASS" : "FAIL") << std::endl;
+        if (ok) ++passed;
+    }
+    std::cout << " " << std::endl;
+    std::cout << "Summary: Passed " << passed << " of " << total << " tests" << std::endl;
+
     return fails;
 }
 

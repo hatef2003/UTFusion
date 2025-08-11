@@ -22,6 +22,7 @@ static QByteArray makePacket(const QByteArray &img1, const QByteArray &img2) {
 
 
 void mockimagereciever_test::run_all_mockimagereciever_tests() {
+    std::cout << " " << std::endl;
     std::cout << "========== mockimagereciever_tests: ==========" << std::endl;
     struct Test { const char* name; bool (mockimagereciever_test::*fn)(); };
     Test tests[] = {
@@ -35,6 +36,7 @@ void mockimagereciever_test::run_all_mockimagereciever_tests() {
         std::cout << t.name << ": " << (ok ? "PASS" : "FAIL") << std::endl;
         if (ok) ++passed;
     }
+    std::cout << " " << std::endl;
     std::cout << "Summary: Passed "  << passed << " of " << total << " tests." << std::endl;
 }
 
