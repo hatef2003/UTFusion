@@ -9,8 +9,8 @@ def generate_pixel_data():
     for _ in range(random.randint(5, 10)):  # random number of pixels per value
         pixel = {
             "pixel_depth": round(random.uniform(0, 100), 2),
-            "pixel_pos_x": round(random.uniform(0, 1920), 2),
-            "pixel_pos_y": round(random.uniform(0, 1080), 2)
+            "pixel_pos_x": round(random.uniform(0, 100), 2),
+            "pixel_pos_y": round(random.uniform(0, 100), 2)
         }
         pixels.append(pixel)
     return pixels
