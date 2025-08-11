@@ -8,8 +8,8 @@ public:
 
 private:
 
-    bool testOperationDoneOnce(); //emit just 1 time
+    bool testOperationDoneOnce(); 
     bool testOperationDoneTwice();
 };
 
-#endif // FUSE_TEST_H
+#endif 

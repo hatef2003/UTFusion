@@ -52,11 +52,11 @@ bool mockimagereciever_test::testIgnoreIncompletePacket() {
     sock.connectToHost(QHostAddress::LocalHost, port);
     if (!sock.waitForConnected(500)) return false;
 
-    // send wrong size header and no data
+    
     QByteArray bad;
     QDataStream ds(&bad, QIODevice::WriteOnly);
     ds.setByteOrder(QDataStream::BigEndian);
-    ds << quint32(1000); // declare large size
+    ds << quint32(1000); 
     sock.write(bad);
     sock.flush();
 
