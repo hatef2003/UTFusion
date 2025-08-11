@@ -85,7 +85,7 @@ Copy code
 
 ## File Interconnections Diagram (Mermaid)
 
-```mermaid
+
 graph TD
     A[main.cpp] --> B[Fuse]
     B --> C[FusionUtils/fusion.cpp]
