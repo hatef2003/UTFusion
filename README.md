@@ -123,7 +123,7 @@ Our project includes a comprehensive suite of unit and integration tests to veri
   * `testMissingTimestamp`: Verifies correct behavior when a timestamp is missing (defaults to `0`).
 * **Focus:** Network communication, data integrity, and timestamp handling.
 
----
+
 
 ### 2. **Buffer Tests** (`buffer_test.cpp`)
 
@@ -135,8 +135,6 @@ Our project includes a comprehensive suite of unit and integration tests to veri
   * `testNotSyncBeyondDrift`: Confirms data is considered unsynchronized when timestamps exceed the drift limit.
 * **Focus:** Data synchronization, exception handling.
 
----
-
 ### 3. **DataContainer Tests** (`datacontainer_tests.cpp`)
 
 * **Purpose:** Validate data storage, retrieval, and synchronization in the `DataContainer`.
@@ -147,8 +145,6 @@ Our project includes a comprehensive suite of unit and integration tests to veri
   * `testSyncAfterCamThenRadar`: Validates correct synchronization when camera data arrives first.
 * **Focus:** Data ordering, synchronization logic, error handling.
 
----
-
 ### 4. **Fuse Tests** (`fuse_test.cpp`)
 
 * **Purpose:** Ensure the fusion module emits events correctly when processing data.
@@ -158,8 +154,6 @@ Our project includes a comprehensive suite of unit and integration tests to veri
   * `testOperationDoneTwice`: Ensures multiple emissions occur for multiple inputs.
 * **Focus:** Event emission correctness.
 
----
-
 ### 5. **MockImageReceiver Tests** (`mockimagereciever_test.cpp`)
 
 * **Purpose:** Validate image receiving logic over TCP.
@@ -168,7 +162,6 @@ Our project includes a comprehensive suite of unit and integration tests to veri
   * `testIgnoreIncompletePacket`: Ensures incomplete packets are ignored and no false data reception is reported.
 * **Focus:** Network robustness, packet validation.
 
----
 
 ### 6. **ErfanMocker Tests** (`erfanmocker_test.cpp`)
 
